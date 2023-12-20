@@ -1,4 +1,4 @@
-// #include "push_swap.h"
+#include "push_swap.h"
 
 // void ft_errors_check(int argc, char **argv)
 // {
@@ -18,7 +18,7 @@
 //     {
 //         j = 0;
 //         if (argv[i][j] == '\0')
-//             print_error_and_exit();
+//             ft_exit();
 //         while (j < ft_strlen(argv[i]))
 //         {
 //             if (!ft_isdigit(argv[i][j]))
@@ -29,7 +29,7 @@
 // 					j++;
 // 					continue ;
 // 				}
-//                 print_error_and_exit();
+//                 ft_exit();
 //             }
 //             j++;
 //         }
@@ -47,13 +47,24 @@
 //         //check if atoi works with long, maybe changes might be required
 // 		num = ft_atoi(argv[i]);
 // 		if (num > INTMAX || num < INTMIN)
-// 			print_error_and_exit();
+// 			ft_exit();
 // 		i++;
 // 	}
 // }
 
-// void	print_error_and_exit(void)
-// {
-// 	ft_putstr_fd("Error\n", 2);
-// 	exit(0);
-// }
+void	ft_exit(void)
+{
+	//ft_putstr_fd("Error\n", 2);
+    write(2, "Error\n", 6);
+	exit(0);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	else
+		return (0);
+}

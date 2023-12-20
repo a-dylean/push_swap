@@ -28,24 +28,48 @@ int	ft_atoi(const char *str)
 		return (res);
 }
 
+void ft_check_duplicates(t_stack *stack)
+{
+    t_stack *temp;
+    t_stack *temp2;
+
+    temp = stack;
+    while (temp)
+    {
+        temp2 = temp->next;
+        while (temp2)
+        {
+            if (temp->num == temp2->num)
+                ft_exit();
+            temp2 = temp2->next;
+        }
+        temp = temp->next;
+    }
+}
 int main(int argc, char **argv)
 {
-    t_stack *stack_a;
-    t_stack *stack_b;
-    t_stack *next;
+    t_stack **stack_a;
+    t_stack **stack_b;
+
+    stack_a = (t_stack **)malloc(sizeof(t_stack*));
+    *stack_a = NULL;
 
     //ft_errors_check(argc, argv);
     //initialize lists a and b
-    stack_a = ft_create_list(argc, argv);
+    ft_create_list(stack_a, argc, argv);
+    //stack_b = ft_create_list(0, NULL);
+    
+    //check for doubles in list a
+    ft_check_duplicates(*stack_a);
+    
     int j;
     j = 0;
-    for (j = 0; j < argc - 1; j++)
+    for (j = 0; j < 50; j++)
     {
-        printf("head_a: %d\n", stack_a->num);
-        stack_a = stack_a->next;
+        printf("head_a: %d\n", (*stack_a)->num);
+        stack_a = &(*stack_a)->next;
     }
-    //printf("stack_a: %d\n", stack_a->num);
-    //check for doubles in list a
+  
     //call sort function
     //free all memory
     return 0;
