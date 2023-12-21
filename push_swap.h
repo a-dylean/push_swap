@@ -16,13 +16,12 @@ typedef struct t_stack
 
 void				ft_errors_check(int argc, char **argv);
 void				ft_char_check(int argc, char **argv);
-int					ft_atoi(const char *str);
+void				ft_intsize_check(int argc, char **argv);
 t_stack				*ft_create_node(int num, int index);
 void				ft_add_node_back(t_stack **stack, t_stack *new_node);
-t_stack				*ft_get_last(t_stack *head);
+t_stack				*ft_get_last_node(t_stack *head);
 void				ft_create_list(t_stack **stack, int argc, char **argv);
 void				ft_exit(void);
 void				ft_check_duplicates(t_stack *stack);
-int					ft_isdigit(int c);
-char				**ft_split(const char *s, char c);
+
 #endif
