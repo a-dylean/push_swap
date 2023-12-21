@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manipulate_list.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/21 14:04:12 by atonkopi          #+#    #+#             */
+/*   Updated: 2023/12/21 14:04:30 by atonkopi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -19,7 +31,7 @@ static char	*ft_substr(char const *s, unsigned int start, size_t len)
 			j++;
 		}
 		i++;
-	}	
+	}
 	buffer[j] = '\0';
 	return (buffer);
 }
@@ -61,10 +73,10 @@ static size_t	ft_getsize(char *src, char c)
 
 char	**ft_split(const char *s, char c)
 {
-	size_t		i;
-	size_t		j;
-	size_t		size;
-	char		**splittab;
+	size_t	i;
+	size_t	j;
+	size_t	size;
+	char	**splittab;
 
 	i = 0;
 	j = 0;
@@ -88,58 +100,57 @@ char	**ft_split(const char *s, char c)
 	return (splittab);
 }
 
-t_stack *ft_create_node(int num, int index)
+t_stack	*ft_create_node(int num, int index)
 {
-    t_stack *new;
+	t_stack	*new;
 
-    new = malloc(sizeof(t_stack));
-    if (!new)
-        return (NULL);
-    new->num = num;
-    new->index = index;
-    new->next = NULL;
-    return (new);
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->num = num;
+	new->index = index;
+	new->next = NULL;
+	return (new);
 }
-void ft_create_list(t_stack **stack, int argc, char **argv)
+void	ft_create_list(t_stack **stack, int argc, char **argv)
 {
-    t_stack *next;
-    int i;
-    int j;
+	t_stack	*next;
+	int		i;
 
-    i = 0;
-    if (argc == 2)
-        argv = ft_split(argv[1], ' ');
-    else
-        i++;
-    //stack = ft_create_node(ft_atoi(argv[1]), 0);
-    while (i < argc)
-    {
-        next = ft_create_node(ft_atoi(argv[i]), i);
-        ft_add_node_back(stack, next);
-        i++;
-    }
-}
-
-void ft_add_node_back(t_stack **stack, t_stack *new_node)
-{
-    t_stack *temp;
-
-    if (!new_node)
-        return;
-    if (*stack)
-    {
-        temp = ft_get_last(*stack);
-        temp->next = new_node;
-    }
-    else
-        *stack = new_node;
+	i = 0;
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');
+	else
+		i++;
+	// stack = ft_create_node(ft_atoi(argv[1]), 0);
+	while (i < argc)
+	{
+		next = ft_create_node(ft_atoi(argv[i]), i);
+		ft_add_node_back(stack, next);
+		i++;
+	}
 }
 
-t_stack *ft_get_last(t_stack *head)
+void	ft_add_node_back(t_stack **stack, t_stack *new_node)
 {
-    if (!head)
-        return (NULL);
-    while (head->next)
-        head = head->next;
-    return (head);
+	t_stack	*temp;
+
+	if (!new_node)
+		return ;
+	if (*stack)
+	{
+		temp = ft_get_last(*stack);
+		temp->next = new_node;
+	}
+	else
+		*stack = new_node;
+}
+
+t_stack	*ft_get_last(t_stack *head)
+{
+	if (!head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
 }

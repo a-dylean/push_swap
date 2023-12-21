@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   errors_check.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
+/*   Updated: 2023/12/21 14:21:15 by atonkopi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 // void ft_errors_check(int argc, char **argv)
@@ -54,8 +66,8 @@
 
 void	ft_exit(void)
 {
-	//ft_putstr_fd("Error\n", 2);
-    write(2, "Error\n", 6);
+	// ft_putstr_fd("Error\n", 2);
+	write(2, "Error\n", 6);
 	exit(0);
 }
 
