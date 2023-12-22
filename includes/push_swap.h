@@ -3,6 +3,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+#include "../libft/libft.h"
+
 
 # define INTMAX 2147483647
 # define INTMIN -2147483648

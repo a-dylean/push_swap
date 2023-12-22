@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/ft_printf/ft_printf.h"
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_check_duplicates(t_stack *stack)
 {

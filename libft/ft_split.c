@@ -91,9 +91,7 @@ static char	**fill_arr(char const *s, char c, char **strs)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	int		j;
 
-	j = 0;
 	if (!s)
 		return (NULL);
 	strs = malloc((count_words(s, c) + 1) * sizeof(char *));

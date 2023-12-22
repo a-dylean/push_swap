@@ -19,6 +19,7 @@
 # include <string.h>
 # include <strings.h>
 # include <unistd.h>
+# include "ft_printf/ft_printf.h"
 
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);

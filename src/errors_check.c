@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_errors_check(int argc, char **argv)
 {

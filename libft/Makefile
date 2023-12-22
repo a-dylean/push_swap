@@ -23,7 +23,7 @@ all:	$(NAME)
 $(NAME):	$(OBJECTS) $(INCLUDE)
 			$(AR) $(NAME) $(OBJECTS)
 
-.c.o:	$(CC) (CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
+.c.o:	$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
 
 clean:
 		$(RM) $(OBJECTS)
