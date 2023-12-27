@@ -30,12 +30,19 @@ void	ft_check_duplicates(t_stack *stack)
 		temp = temp->next;
 	}
 }
+static void print_list(t_stack *head) {
+    t_stack *temp = head;
+
+    while (temp != NULL) {
+        ft_printf("%d\n", temp->num);
+        temp = temp->next;
+    }
+}
 
 int	main(int argc, char **argv)
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;
-	int		j;
 
 	stack_a = (t_stack **)malloc(sizeof(t_stack *));
 	*stack_a = NULL;
@@ -44,12 +51,7 @@ int	main(int argc, char **argv)
 	ft_errors_check(argc, argv);
 	ft_create_list(stack_a, argc, argv);
 	ft_check_duplicates(*stack_a);
-	j = 0;
-	for (j = 0; j < 50; j++)
-	{
-		ft_printf("stack_a: %d\n", (*stack_a)->num);
-		stack_a = &(*stack_a)->next;
-	}
+	print_list(*stack_a);
 	// call sort function
 	// free all memory
 	return (0);

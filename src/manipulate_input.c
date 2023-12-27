@@ -29,13 +29,12 @@ void	ft_create_list(t_stack **stack, int argc, char **argv)
 {
 	t_stack	*next;
 	int		i;
-
 	i = 0;
 	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
+		argv = ft_split(argv[1], ' ');	
 	else
 		i++;
-	while (i < argc)
+	while (argv[i])
 	{
 		next = ft_create_node(ft_atoi(argv[i]), i);
 		ft_add_node_back(stack, next);
