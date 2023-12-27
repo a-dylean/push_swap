@@ -23,7 +23,11 @@ t_stack				*ft_create_node(int num, int index);
 void				ft_add_node_back(t_stack **stack, t_stack *new_node);
 t_stack				*ft_get_last_node(t_stack *head);
 void				ft_create_list(t_stack **stack, int argc, char **argv);
+int ft_list_len(t_stack *head);
 void				ft_exit(void);
 void				ft_check_duplicates(t_stack *stack);
+int ft_stack_is_sorted(t_stack *stack);
+void ft_sort(t_stack *stack_a, t_stack *stack_b);
+void ft_sort_three(t_stack *stack_a, t_stack *stack_b);
 
 #endif

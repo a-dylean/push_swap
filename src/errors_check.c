@@ -63,6 +63,24 @@ void	ft_intsize_check(char **argv)
 		i++;
 	}
 }
+void	ft_check_duplicates(t_stack *stack)
+{
+	t_stack	*temp;
+	t_stack	*temp2;
+
+	temp = stack;
+	while (temp)
+	{
+		temp2 = temp->next;
+		while (temp2)
+		{
+			if (temp->num == temp2->num)
+				ft_exit();
+			temp2 = temp2->next;
+		}
+		temp = temp->next;
+	}
+}
 
 void	ft_exit(void)
 {

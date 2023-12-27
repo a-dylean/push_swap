@@ -12,3 +12,14 @@
 
 #include "../includes/push_swap.h"
 
+// static void ft_swap(t_stack **stack)
+// {
+//     t_stack *temp;
+
+//     if (!*stack || !(*stack)->next)
+//         return ;
+//     temp = (*stack)->next;
+//     (*stack)->next = temp->next;
+//     temp->next = *stack;
+//     *stack = temp;
+// }

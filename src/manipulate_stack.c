@@ -35,3 +35,17 @@ t_stack	*ft_get_last_node(t_stack *head)
 		head = head->next;
 	return (head);
 }
+
+int ft_list_len(t_stack *head) 
+{
+    int len;
+	t_stack *temp;
+	len = 0;
+
+    temp = head;
+    while (temp != NULL) {
+        len++;
+        temp = temp->next;
+    }
+    return len;
+}
