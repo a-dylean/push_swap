@@ -56,7 +56,7 @@ int	main(int argc, char **argv)
 		ft_sort_three(*stack_a, *stack_b);
 	else 
 		ft_sort(*stack_a, *stack_b);
-	
+	print_list(*stack_a);
 	// free all memory
 	return (0);
 }

@@ -29,5 +29,6 @@ void				ft_check_duplicates(t_stack *stack);
 int ft_stack_is_sorted(t_stack *stack);
 void ft_sort(t_stack *stack_a, t_stack *stack_b);
 void ft_sort_three(t_stack *stack_a, t_stack *stack_b);
+void ft_swap(t_stack *stack_a, char stack);
 
 #endif
