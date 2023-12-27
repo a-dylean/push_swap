@@ -12,25 +12,25 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_errors_check(char **argv)
+void	ft_errors_check(int argc, char **argv)
 {
 	// if (argc == 1)
 	// 	exit(0);
-	ft_char_check(argv);
+	ft_char_check(argc, argv);
 	ft_intsize_check(argv);
 }
 
-void	ft_char_check(char **argv)
+void	ft_char_check(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
+	if (argc == 2)
+		i = 0;
 	while (argv[i])
 	{
 		j = 0;
-		if (argv[i][j] == '\0')
-			ft_exit();
 		while (j < (int)ft_strlen(argv[i]))
 		{
 			if (!ft_isdigit(argv[i][j]))

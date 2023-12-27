@@ -52,7 +52,7 @@ int	main(int argc, char **argv)
 		exit(0);
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');	
-	ft_errors_check(argv);
+	ft_errors_check(argc, argv);
 	ft_create_list(stack_a, argc, argv);
 	ft_check_duplicates(*stack_a);
 	print_list(*stack_a);
