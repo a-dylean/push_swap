@@ -16,9 +16,9 @@ typedef struct t_stack
 	struct t_stack	*next;
 }					t_stack;
 
-void				ft_errors_check(int argc, char **argv);
-void				ft_char_check(int argc, char **argv);
-void				ft_intsize_check(int argc, char **argv);
+void				ft_errors_check(char **argv);
+void				ft_char_check(char **argv);
+void				ft_intsize_check(char **argv);
 t_stack				*ft_create_node(int num, int index);
 void				ft_add_node_back(t_stack **stack, t_stack *new_node);
 t_stack				*ft_get_last_node(t_stack *head);

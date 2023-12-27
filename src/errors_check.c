@@ -12,21 +12,21 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_errors_check(int argc, char **argv)
+void	ft_errors_check(char **argv)
 {
-	if (argc == 1)
-		exit(0);
-	ft_char_check(argc, argv);
-	ft_intsize_check(argc, argv);
+	// if (argc == 1)
+	// 	exit(0);
+	ft_char_check(argv);
+	ft_intsize_check(argv);
 }
 
-void	ft_char_check(int argc, char **argv)
+void	ft_char_check(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 1;
-	while (i < argc)
+	while (argv[i])
 	{
 		j = 0;
 		if (argv[i][j] == '\0')
@@ -49,16 +49,15 @@ void	ft_char_check(int argc, char **argv)
 	}
 }
 
-void	ft_intsize_check(int argc, char **argv)
+void	ft_intsize_check(char **argv)
 {
 	long	num;
 	int		i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (argv[i])
 	{
-		// check if atoi works with long, maybe changes might be required
-		num = ft_atoi(argv[i]);
+		num = ft_atoi_long(argv[i]);
 		if (num > INTMAX || num < INTMIN)
 			ft_exit();
 		i++;

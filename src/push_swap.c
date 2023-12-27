@@ -48,7 +48,11 @@ int	main(int argc, char **argv)
 	*stack_a = NULL;
 	stack_b = (t_stack **)malloc(sizeof(t_stack *));
 	*stack_b = NULL;
-	ft_errors_check(argc, argv);
+	if (argc == 1)
+		exit(0);
+	if (argc == 2)
+		argv = ft_split(argv[1], ' ');	
+	ft_errors_check(argv);
 	ft_create_list(stack_a, argc, argv);
 	ft_check_duplicates(*stack_a);
 	print_list(*stack_a);
