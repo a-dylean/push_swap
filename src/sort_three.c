@@ -7,20 +7,20 @@ void ft_sort_three(t_stack **stack_a)
      int third = (*stack_a)->next->next->num;
 
      if (first > second && second < third && first < third)
-          ft_sa(*stack_a);
+          ft_swap(&*stack_a, 'a');
      else if (first > second && second > third && first > third)
      {
-          ft_sa(*stack_a);
-          ft_rra(&*stack_a);
+          ft_swap(&*stack_a, 'a');
+          ft_reverse_rotate(&*stack_a, 'a');
      }
      else if (first > second && second < third && first > third)
-          ft_ra(&*stack_a);
+          ft_rotate(&*stack_a, 'a');
      else if (first < second && second > third && first < third)
      {
-          ft_sa(*stack_a);
-          ft_ra(&*stack_a);
+          ft_swap(&*stack_a, 'a');
+          ft_rotate(&*stack_a, 'a');
      }   
      else if (first < second && second > third && first > third)
-          ft_rra(&*stack_a);
+         ft_reverse_rotate(&*stack_a, 'a');
 }
 

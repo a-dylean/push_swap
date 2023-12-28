@@ -51,16 +51,17 @@ int	main(int argc, char **argv)
 	ft_errors_check(argc, argv);
 	ft_create_list(stack_a, argc, argv);
 	ft_check_duplicates(*stack_a);
-	print_list(*stack_a, 'a');
-	print_list(*stack_b, 'b');
+
 	if (ft_list_len(*stack_a) == 3)
 		ft_sort_three(&*stack_a);
 	else 
 		ft_sort(*stack_a, *stack_b);
 
-	// ft_pb(&*stack_a, &*stack_b);
-	// ft_pb(&*stack_a, &*stack_b);
-	// ft_pb(&*stack_a, &*stack_b);
+	// ft_push(&*stack_a, &*stack_b, 'b');
+	// ft_push(&*stack_a, &*stack_b, 'b');
+	// ft_push(&*stack_a, &*stack_b, 'b');
+	// print_list(*stack_a, 'a');
+	// print_list(*stack_b, 'b');
 	// print_list(*stack_a, 'a');
 	// print_list(*stack_b, 'b');
 	// ft_ra(&*stack_a);
@@ -70,8 +71,8 @@ int	main(int argc, char **argv)
 	// ft_rr(&*stack_a, &*stack_b);
 	// print_list(*stack_a, 'a');
 	// print_list(*stack_b, 'b');
-	// ft_sb(*stack_b);
-	// ft_sa(*stack_a);
+	// ft_swap(&*stack_a, 'a');
+	// ft_swap(&*stack_b, 'b');
 	// print_list(*stack_a, 'a');
 	// print_list(*stack_b, 'b');
 	// ft_ss(*stack_a, *stack_b);
@@ -82,8 +83,12 @@ int	main(int argc, char **argv)
 	// print_list(*stack_a, 'a');
 	// print_list(*stack_b, 'b');
 	// ft_rrr(&*stack_a, &*stack_b);
+	// ft_rotate(&*stack_a, 'a');
+	// ft_rotate(&*stack_b, 'b');
+	// ft_reverse_rotate(&*stack_a, 'a');
+	// ft_reverse_rotate(&*stack_b, 'b');
 	print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
+	print_list(*stack_b, 'b');
 	// free all memory
 	return (0);
 }

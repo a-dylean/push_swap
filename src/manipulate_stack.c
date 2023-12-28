@@ -49,3 +49,18 @@ int ft_list_len(t_stack *head)
     }
     return len;
 }
+
+void	ft_update_index(t_stack **stack)
+{
+	t_stack	*temp;
+	int		i;
+
+	i = 0;
+	temp = *stack;
+	while (temp)
+	{
+		temp->index = i;
+		temp = temp->next;
+		i++;
+	}
+}
