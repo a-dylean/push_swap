@@ -1,7 +1,26 @@
 #include "../includes/push_swap.h"
 
-void ft_sort_three(t_stack *stack_a, t_stack *stack_b)
+void ft_sort_three(t_stack **stack_a)
 {
-     if (ft_stack_is_sorted(stack_a) && !(stack_b))
-          ft_printf("stacks are sorted\n");
+     int first = (*stack_a)->num;
+     int second = (*stack_a)->next->num;
+     int third = (*stack_a)->next->next->num;
+
+     if (first > second && second < third && first < third)
+          ft_sa(*stack_a);
+     else if (first > second && second > third && first > third)
+     {
+          ft_sa(*stack_a);
+          ft_rra(&*stack_a);
+     }
+     else if (first > second && second < third && first > third)
+          ft_ra(&*stack_a);
+     else if (first < second && second > third && first < third)
+     {
+          ft_sa(*stack_a);
+          ft_ra(&*stack_a);
+     }   
+     else if (first < second && second > third && first > third)
+          ft_rra(&*stack_a);
 }
+

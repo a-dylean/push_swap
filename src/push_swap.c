@@ -53,10 +53,10 @@ int	main(int argc, char **argv)
 	ft_check_duplicates(*stack_a);
 	print_list(*stack_a, 'a');
 	print_list(*stack_b, 'b');
-	// if (ft_list_len(*stack_a) == 3)
-	// 	ft_sort_three(*stack_a, *stack_b);
-	// else 
-	// 	ft_sort(*stack_a, *stack_b);
+	if (ft_list_len(*stack_a) == 3)
+		ft_sort_three(&*stack_a);
+	else 
+		ft_sort(*stack_a, *stack_b);
 
 	// ft_pb(&*stack_a, &*stack_b);
 	// ft_pb(&*stack_a, &*stack_b);
@@ -82,7 +82,7 @@ int	main(int argc, char **argv)
 	// print_list(*stack_a, 'a');
 	// print_list(*stack_b, 'b');
 	// ft_rrr(&*stack_a, &*stack_b);
-	// print_list(*stack_a, 'a');
+	print_list(*stack_a, 'a');
 	// print_list(*stack_b, 'b');
 	// free all memory
 	return (0);
