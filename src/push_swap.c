@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-static void print_list(t_stack *head, char stack) {
+void print_list(t_stack *head, char stack) {
     t_stack *temp = head;
 
     while (temp != NULL) {
@@ -51,11 +51,13 @@ int	main(int argc, char **argv)
 	ft_errors_check(argc, argv);
 	ft_create_list(stack_a, argc, argv);
 	ft_check_duplicates(*stack_a);
-
+	if (ft_stack_is_sorted(*stack_a))
+		//free all the stacks
+		exit(0);
 	if (ft_list_len(*stack_a) == 3)
 		ft_sort_three(&*stack_a);
 	else 
-		ft_sort(*stack_a, *stack_b);
+		ft_sort(&*stack_a, &*stack_b);
 
 	// ft_push(&*stack_a, &*stack_b, 'b');
 	// ft_push(&*stack_a, &*stack_b, 'b');

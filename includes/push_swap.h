@@ -27,7 +27,7 @@ int ft_list_len(t_stack *head);
 void				ft_exit(void);
 void				ft_check_duplicates(t_stack *stack);
 int ft_stack_is_sorted(t_stack *stack);
-void ft_sort(t_stack *stack_a, t_stack *stack_b);
+void ft_sort(t_stack **stack_a, t_stack **stack_b);
 void ft_sort_three(t_stack **stack_a);
 void ft_swap(t_stack **stack, char stack_name);
 //void ft_ss(t_stack *stack_a, t_stack *stack_b);
@@ -35,5 +35,12 @@ void ft_push(t_stack **src, t_stack **dest, char stack_name);
 void ft_rotate(t_stack **stack, char stack_name);
 void ft_reverse_rotate(t_stack **stack, char stack_name);
 //void ft_rrr(t_stack **stack_a, t_stack **stack_b);
+void move_to_b(t_stack **stack_a, t_stack **stack_b);
+void fill_stack_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_update_index(t_stack **stack);
+int	calculate_ratio(int stack_len);
+int calculate_ceiling(t_stack *stack);
+
+//for testing, don't forget to remove
+void print_list(t_stack *head, char stack);
 #endif
