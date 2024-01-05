@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2023/12/21 15:50:03 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:10:03 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	ft_intsize_check(char **argv)
 		i++;
 	}
 }
+
 void	ft_check_duplicates(t_stack *stack)
 {
 	t_stack	*temp;

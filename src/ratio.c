@@ -6,13 +6,13 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:00:51 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:00:51 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:10:13 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int calculate_ratio(int stack_len)
+int	calculate_ratio(int stack_len)
 {
 	if (stack_len < 10)
 	{
@@ -32,9 +32,9 @@ int calculate_ratio(int stack_len)
 	}
 }
 
-int calculate_ceiling(t_stack *stack)
+int	calculate_ceiling(t_stack *stack)
 {
-	int min; 
+	int min;
 	int ratio;
 	t_stack *temp;
 
@@ -48,5 +48,5 @@ int calculate_ceiling(t_stack *stack)
 		temp = temp->next;
 	}
 
-	return min + ratio * 2;
+	return (min + ratio * 2);
 }

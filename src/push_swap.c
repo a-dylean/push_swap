@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:02:27 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:19:20 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ int	main(int argc, char **argv)
 	// ft_rotate(&*stack_b, 'b');
 	// ft_reverse_rotate(&*stack_a, 'a');
 	// ft_reverse_rotate(&*stack_b, 'b');
-	print_list(*stack_a, 'a');
-	print_list(*stack_b, 'b');
+	// print_list(*stack_a, 'a');
+	// print_list(*stack_b, 'b');
 	// free all memory
 	return (0);
 }
