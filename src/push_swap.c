@@ -6,12 +6,13 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:19:20 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:20:44 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+// for development, remove later
 void	print_list(t_stack *head, char stack)
 {
 	t_stack	*temp;
@@ -54,6 +55,7 @@ int	main(int argc, char **argv)
 	ft_errors_check(argc, argv);
 	ft_create_list(stack_a, argc, argv);
 	ft_check_duplicates(*stack_a);
+	//print_list(*stack_a, 'a');
 	if (ft_stack_is_sorted(*stack_a))
 		// free all the stacks
 		exit(0);
@@ -61,38 +63,13 @@ int	main(int argc, char **argv)
 		ft_sort_three(&*stack_a);
 	else
 		ft_sort(&*stack_a, &*stack_b);
-	// ft_push(&*stack_a, &*stack_b, 'b');
-	// ft_push(&*stack_a, &*stack_b, 'b');
-	// ft_push(&*stack_a, &*stack_b, 'b');
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
-	// ft_ra(&*stack_a);
-	// ft_rb(&*stack_b);
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
-	// ft_rr(&*stack_a, &*stack_b);
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
-	// ft_swap(&*stack_a, 'a');
-	// ft_swap(&*stack_b, 'b');
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
-	// ft_ss(*stack_a, *stack_b);
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
-	// ft_rra(&*stack_a);
-	// ft_rrb(&*stack_b);
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
-	// ft_rrr(&*stack_a, &*stack_b);
-	// ft_rotate(&*stack_a, 'a');
-	// ft_rotate(&*stack_b, 'b');
-	// ft_reverse_rotate(&*stack_a, 'a');
-	// ft_reverse_rotate(&*stack_b, 'b');
-	// print_list(*stack_a, 'a');
-	// print_list(*stack_b, 'b');
+		
+	// printing the stacks for development, remove later
+	print_list(*stack_a, 'a');
+	print_list(*stack_b, 'b');
+	
 	// free all memory
+	ft_free_stack(stack_a);
+	ft_free_stack(stack_b);
 	return (0);
 }

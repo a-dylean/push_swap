@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:09:15 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:16:41 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void				fill_stack_b(t_stack **stack_a, t_stack **stack_b);
 void				ft_update_index(t_stack **stack);
 int					calculate_ratio(int stack_len);
 int					calculate_ceiling(t_stack *stack);
+void				ft_free_stack(t_stack **stack);
 
 // for testing, don't forget to remove
 void				print_list(t_stack *head, char stack);

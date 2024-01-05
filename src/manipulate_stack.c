@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:02:30 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 17:35:56 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,16 @@ void	ft_update_index(t_stack **stack)
 		temp = temp->next;
 		i++;
 	}
+}
+
+void ft_free_stack(t_stack **stack)
+{
+	t_stack *tmp;
+
+    while (*stack) 
+	{
+        tmp = (*stack)->next;
+        free(*stack);
+        *stack = tmp;
+    }
 }
