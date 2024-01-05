@@ -6,24 +6,27 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2023/12/21 16:31:17 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:02:27 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void print_list(t_stack *head, char stack) {
-    t_stack *temp = head;
+void	print_list(t_stack *head, char stack)
+{
+	t_stack	*temp;
 
-    while (temp != NULL) {
-        ft_printf("stack: %c: %d\n", stack, temp->num);
-        temp = temp->next;
-    }
+	temp = head;
+	while (temp != NULL)
+	{
+		ft_printf("stack: %c: %d\n", stack, temp->num);
+		temp = temp->next;
+	}
 }
 
-int ft_stack_is_sorted(t_stack *stack)
+int	ft_stack_is_sorted(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = stack;
 	while (temp->next)
@@ -47,18 +50,17 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		exit(0);
 	if (argc == 2)
-		argv = ft_split(argv[1], ' ');	
+		argv = ft_split(argv[1], ' ');
 	ft_errors_check(argc, argv);
 	ft_create_list(stack_a, argc, argv);
 	ft_check_duplicates(*stack_a);
 	if (ft_stack_is_sorted(*stack_a))
-		//free all the stacks
+		// free all the stacks
 		exit(0);
 	if (ft_list_len(*stack_a) == 3)
 		ft_sort_three(&*stack_a);
-	else 
+	else
 		ft_sort(&*stack_a, &*stack_b);
-
 	// ft_push(&*stack_a, &*stack_b, 'b');
 	// ft_push(&*stack_a, &*stack_b, 'b');
 	// ft_push(&*stack_a, &*stack_b, 'b');

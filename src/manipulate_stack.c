@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2023/12/21 16:31:04 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:02:30 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,25 @@ t_stack	*ft_get_last_node(t_stack *head)
 	return (head);
 }
 
-int ft_list_len(t_stack *head) 
+int	ft_list_len(t_stack *head)
 {
-    int len;
-	t_stack *temp;
-	len = 0;
+	int		len;
+	t_stack	*temp;
 
-    temp = head;
-    while (temp != NULL) {
-        len++;
-        temp = temp->next;
-    }
-    return len;
+	len = 0;
+	temp = head;
+	while (temp != NULL)
+	{
+		len++;
+		temp = temp->next;
+	}
+	return (len);
 }
 
 void	ft_update_index(t_stack **stack)
 {
-	t_stack	*temp;
-	int		i;
+	t_stack *temp;
+	int i;
 
 	i = 0;
 	temp = *stack;

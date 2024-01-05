@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:12 by atonkopi          #+#    #+#             */
-/*   Updated: 2023/12/21 16:25:52 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/05 15:02:35 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_create_list(t_stack **stack, int argc, char **argv)
 {
 	t_stack	*next;
 	int		i;
+
 	i = 1;
 	if (argc == 2)
 		i = 0;
