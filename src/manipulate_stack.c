@@ -77,3 +77,49 @@ void ft_free_stack(t_stack **stack)
         *stack = tmp;
     }
 }
+
+int find_min_value(t_stack *stack)
+{
+    if (stack == NULL) {
+        return -1; // or any other value indicating an error
+    }
+
+    int min_value = stack->num;
+    stack = stack->next;
+
+    while (stack != NULL) {
+        if (stack->num < min_value) {
+            min_value = stack->num;
+        }
+        stack = stack->next;
+    }
+
+    return min_value;
+}
+
+int find_third_largest(t_stack *stack)
+{
+    int max1 = INTMIN;
+    int max2 = INTMIN;
+    int max3 = INTMIN;
+
+    while (stack != NULL) {
+        if (stack->num > max1) {
+            max3 = max2;
+            max2 = max1;
+            max1 = stack->num;
+        } else if (stack->num > max2) {
+            max3 = max2;
+            max2 = stack->num;
+        } else if (stack->num > max3) {
+            max3 = stack->num;
+        }
+        stack = stack->next;
+    }
+
+    if (max3 == INTMIN) {
+        return -1; // or any other value indicating an error
+    }
+
+    return max3;
+}
