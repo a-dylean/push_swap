@@ -53,8 +53,11 @@ int					calculate_ratio(int stack_len);
 int					calculate_ceiling(t_stack *stack);
 void				ft_free_stack(t_stack **stack);
 int find_min_value(t_stack *stack);
+t_stack *find_max_node(t_stack *stack);
 int find_third_largest(t_stack *stack);
-
+void refill_stack_a(t_stack **stack_a, t_stack **stack_b);
+void find_and_push_max(t_stack **stack_a, t_stack **stack_b);
+int steps_to_node(t_stack *stack, t_stack *node);
 // for testing, don't forget to remove
 void				print_list(t_stack *head, char stack);
 #endif

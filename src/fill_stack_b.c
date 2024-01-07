@@ -45,7 +45,7 @@ static t_stack *find_second_node_up_to_ceiling(t_stack *stack, int ceiling)
 	return (min_node);
 }
 
-static int steps_to_node(t_stack *stack, t_stack *node)
+int steps_to_node(t_stack *stack, t_stack *node)
 {
 	int steps;
 

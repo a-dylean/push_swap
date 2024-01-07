@@ -95,6 +95,27 @@ int find_min_value(t_stack *stack)
     return min_value;
 }
 
+t_stack *find_max_node(t_stack *stack)
+{
+    if (stack == NULL)
+        return NULL;
+
+    t_stack *max_node = stack;
+    int max_value = stack->num;
+
+    while (stack != NULL)
+    {
+        if (stack->num > max_value)
+        {
+            max_value = stack->num;
+            max_node = stack;
+        }
+        stack = stack->next;
+    }
+
+    return max_node;
+}
+
 int find_third_largest(t_stack *stack)
 {
     int max1 = INTMIN;
