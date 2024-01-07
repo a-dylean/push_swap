@@ -84,16 +84,14 @@ int find_min_value(t_stack *stack)
         return -1; // or any other value indicating an error
     }
 
-    int min_value = stack->num;
-    stack = stack->next;
-
-    while (stack != NULL) {
-        if (stack->num < min_value) {
+    int min_value;
+    
+    min_value = stack->num;
+    while (stack) {
+        if (stack->num < min_value)
             min_value = stack->num;
-        }
         stack = stack->next;
     }
-
     return min_value;
 }
 
