@@ -39,9 +39,7 @@ static t_stack *find_second_node_up_to_ceiling(t_stack *stack, int ceiling)
 	while (stack)
 	{
 		if (stack->num < ceiling)
-		{
 			min_node = stack;
-		}
 		stack = stack->next;
 	}
 	return (min_node);
@@ -53,10 +51,7 @@ static int steps_to_node(t_stack *stack, t_stack *node)
 
 	steps = 0;
 	if (!node)
-	{
-		ft_printf("node is NULL\n");
 		return (-1);
-	}
 
 	while (stack != node)
 	{
@@ -90,12 +85,11 @@ void move_to_b(t_stack **stack_a, t_stack **stack_b, t_stack *node_to_move, int 
 	}
 }
 
-void fill_stack_b(t_stack **stack_a, t_stack **stack_b)
+void fill_stack_b(t_stack **stack_a, t_stack **stack_b, int ratio, int ceiling)
 {
 	t_stack *first_node_to_move;
 	t_stack *second_node_to_move;
-	int ratio = calculate_ratio(ft_list_len(*stack_a));
-	int ceiling = find_min_value(*stack_a);
+
 	while (ft_list_len(*stack_a) > 3)
 	{
 		ceiling += (2 * ratio);
