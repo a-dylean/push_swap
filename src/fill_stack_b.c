@@ -76,10 +76,10 @@ void move_to_b(t_stack **stack_a, t_stack **stack_b, t_stack *node_to_move, int 
 			ft_reverse_rotate(stack_a, 'a');
 	}
 	ft_push(stack_a, stack_b, 'b');
-	ft_printf("ceiling: %d, ratio: %d\n", ceiling, ratio);
+	
 	//   If the top value in stack_b is smaller than the previous value, rotate stack_b
-	if ((*stack_b)->next != NULL && (*stack_b)->num < (*stack_b)->next->num)
-	// if ((*stack_b)->num < ceiling - ratio)
+	//if ((*stack_b)->next != NULL && (*stack_b)->num < (*stack_b)->next->num)
+	if ((*stack_b)->num < ceiling - ratio)
 	{
 		ft_rotate(stack_b, 'b');
 	}
@@ -93,8 +93,9 @@ void fill_stack_b(t_stack **stack_a, t_stack **stack_b, int ratio, int ceiling)
 	while (ft_list_len(*stack_a) > 3)
 	{
 		ceiling += (2 * ratio);
-		// if (ceiling > find_third_largest(*stack_a))
-		// 	ceiling = find_third_largest(*stack_a);
+		ft_printf("ceiling: %d, ratio: %d\n", ceiling, ratio);
+		if (ceiling > find_third_largest(*stack_a))
+			ceiling = find_third_largest(*stack_a);
 		first_node_to_move = find_first_node_up_to_ceiling(*stack_a, ceiling);
 		second_node_to_move = find_second_node_up_to_ceiling(*stack_a, ceiling);
 		while ((first_node_to_move && second_node_to_move) && ft_list_len(*stack_a) > 3)
