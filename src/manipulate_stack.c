@@ -80,12 +80,11 @@ void ft_free_stack(t_stack **stack)
 
 int find_min_value(t_stack *stack)
 {
-    if (stack == NULL) {
-        return -1; // or any other value indicating an error
-    }
-
     int min_value;
-    
+     
+    if (!stack) {
+        return -1;
+    }
     min_value = stack->num;
     while (stack) {
         if (stack->num < min_value)
@@ -95,12 +94,9 @@ int find_min_value(t_stack *stack)
     return min_value;
 }
 
-t_stack *find_max_node(t_stack *stack)
+t_stack find_max_node(t_stack *stack)
 {
-    if (stack == NULL)
-        return NULL;
-
-    t_stack *max_node = stack;
+    t_stack max_node;
     int max_value = stack->num;
 
     while (stack != NULL)
@@ -108,11 +104,11 @@ t_stack *find_max_node(t_stack *stack)
         if (stack->num > max_value)
         {
             max_value = stack->num;
-            max_node = stack;
+            max_node.index = stack->index;
+            max_node.num = stack->num;
         }
         stack = stack->next;
     }
-
     return max_node;
 }
 
@@ -135,10 +131,8 @@ int find_third_largest(t_stack *stack)
         }
         stack = stack->next;
     }
-
     if (max3 == INTMIN) {
-        return -1; // or any other value indicating an error
+        return -1;
     }
-
     return max3;
 }

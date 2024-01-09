@@ -24,7 +24,7 @@ void refill_stack_a(t_stack **stack_a, t_stack **stack_b)
 
 void find_and_push_max(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *max_node;
+    t_stack max_node;
     int max_steps;
     int steps_to_top;
     int steps_to_bottom;
