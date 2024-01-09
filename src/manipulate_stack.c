@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 16:29:53 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:18:53 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,11 +119,14 @@ t_stack	find_max_node(t_stack *stack)
 
 int	find_third_largest(t_stack *stack)
 {
-	int max1 = INTMIN;
-	int max2 = INTMIN;
-	int max3 = INTMIN;
+	int	max1;
+	int	max2;
+	int	max3;
 
-	while (stack != NULL)
+	max1 = INTMIN;
+	max2 = INTMIN;
+	max3 = INTMIN;
+	while (stack)
 	{
 		if (stack->num > max1)
 		{
@@ -137,14 +140,10 @@ int	find_third_largest(t_stack *stack)
 			max2 = stack->num;
 		}
 		else if (stack->num > max3)
-		{
 			max3 = stack->num;
-		}
 		stack = stack->next;
 	}
 	if (max3 == INTMIN)
-	{
 		return (-1);
-	}
 	return (max3);
 }

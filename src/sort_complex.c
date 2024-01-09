@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   sort_complex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:00:59 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 16:31:48 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:55:32 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_sort(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort_complex(t_stack **stack_a, t_stack **stack_b)
 {
 	int	ratio;
 	int	ceiling;

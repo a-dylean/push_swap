@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:10:03 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:25:44 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_errors_check(int argc, char **argv)
 {
-	// if (argc == 1)
-	// 	exit(0);
+	if (argc == 1)
+		exit(0);
 	ft_char_check(argc, argv);
 	ft_intsize_check(argv);
 }
@@ -36,7 +36,7 @@ void	ft_char_check(int argc, char **argv)
 			if (!ft_isdigit(argv[i][j]))
 			{
 				if (j == 0 && ft_strlen(argv[i]) != 1 && (argv[i][j] == '-'
-						|| argv[i][j] == '+'))
+					|| argv[i][j] == '+'))
 				{
 					j++;
 					continue ;

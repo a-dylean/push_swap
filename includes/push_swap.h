@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 15:25:59 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:10:28 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,13 @@ int					ft_list_len(t_stack *head);
 void				ft_exit(void);
 void				ft_check_duplicates(t_stack *stack);
 int					ft_stack_is_sorted(t_stack *stack);
-void				ft_sort(t_stack **stack_a, t_stack **stack_b);
+void				ft_sort_complex(t_stack **stack_a, t_stack **stack_b);
+void				ft_sort_two(t_stack **stack_a);
 void				ft_sort_three(t_stack **stack_a);
 void				ft_swap(t_stack **stack, char stack_name);
-// void ft_ss(t_stack *stack_a, t_stack *stack_b);
 void				ft_push(t_stack **src, t_stack **dest, char stack_name);
 void				ft_rotate(t_stack **stack, char stack_name);
 void				ft_reverse_rotate(t_stack **stack, char stack_name);
-// void ft_rrr(t_stack **stack_a, t_stack **stack_b);
 void				move_to_b(t_stack **stack_a, t_stack **stack_b,
 						t_stack node_to_move, int ceiling);
 void				fill_stack_b(t_stack **stack_a, t_stack **stack_b,
@@ -63,6 +62,4 @@ int					find_third_largest(t_stack *stack);
 void				refill_stack_a(t_stack **stack_a, t_stack **stack_b);
 void				find_and_push_max(t_stack **stack_a, t_stack **stack_b);
 int					steps_to_node(t_stack *stack, t_stack node);
-// for testing, don't forget to remove
-void				print_list(t_stack *head, char stack);
 #endif
