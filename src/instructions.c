@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:34:01 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:04:00 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:50:59 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ void	ft_rotate(t_stack **stack, char stack_name)
 //     t_stack *first2;
 //     t_stack *last2;
 
-//     if (*stack_a == NULL || (*stack_a)->next == NULL || *stack_b == NULL || (*stack_b)->next == NULL)
+//     if (*stack_a == NULL || (*stack_a)->next == NULL || *stack_b == NULL
+//	|| (*stack_b)->next == NULL)
 //         return ;
 //     first1 = *stack_a;
 //     *stack_a = (*stack_a)->next;
@@ -121,7 +122,8 @@ void	ft_reverse_rotate(t_stack **stack, char stack_name)
 //     t_stack *prev2;
 //     t_stack *last2;
 
-//     if (*stack_a == NULL || (*stack_a)->next == NULL || *stack_b == NULL || (*stack_b)->next == NULL)
+//     if (*stack_a == NULL || (*stack_a)->next == NULL || *stack_b == NULL
+//	|| (*stack_b)->next == NULL)
 //         return ;
 //     last1 = *stack_a;
 //     while (last1->next != NULL) {

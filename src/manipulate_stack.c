@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 17:35:56 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:51:16 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	ft_list_len(t_stack *head)
 
 void	ft_update_index(t_stack **stack)
 {
-	t_stack *temp;
-	int i;
+	t_stack	*temp;
+	int		i;
 
 	i = 0;
 	temp = *stack;
@@ -66,73 +66,83 @@ void	ft_update_index(t_stack **stack)
 	}
 }
 
-void ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-    while (*stack) 
+	while (*stack)
 	{
-        tmp = (*stack)->next;
-        free(*stack);
-        *stack = tmp;
-    }
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
 }
 
-int find_min_value(t_stack *stack)
+int	find_min_value(t_stack *stack)
 {
-    int min_value;
-     
-    if (!stack) {
-        return -1;
-    }
-    min_value = stack->num;
-    while (stack) {
-        if (stack->num < min_value)
-            min_value = stack->num;
-        stack = stack->next;
-    }
-    return min_value;
+	int	min_value;
+
+	if (!stack)
+	{
+		return (-1);
+	}
+	min_value = stack->num;
+	while (stack)
+	{
+		if (stack->num < min_value)
+			min_value = stack->num;
+		stack = stack->next;
+	}
+	return (min_value);
 }
 
-t_stack find_max_node(t_stack *stack)
+t_stack	find_max_node(t_stack *stack)
 {
-    t_stack max_node;
-    int max_value = stack->num;
+	t_stack	max_node;
+	int		max_value;
 
-    while (stack != NULL)
-    {
-        if (stack->num > max_value)
-        {
-            max_value = stack->num;
-            max_node.index = stack->index;
-            max_node.num = stack->num;
-        }
-        stack = stack->next;
-    }
-    return max_node;
+	max_value = stack->num;
+	while (stack != NULL)
+	{
+		if (stack->num > max_value)
+		{
+			max_value = stack->num;
+			max_node.index = stack->index;
+			max_node.num = stack->num;
+		}
+		stack = stack->next;
+	}
+	return (max_node);
 }
 
-int find_third_largest(t_stack *stack)
+int	find_third_largest(t_stack *stack)
 {
-    int max1 = INTMIN;
-    int max2 = INTMIN;
-    int max3 = INTMIN;
+	int max1 = INTMIN;
+	int max2 = INTMIN;
+	int max3 = INTMIN;
 
-    while (stack != NULL) {
-        if (stack->num > max1) {
-            max3 = max2;
-            max2 = max1;
-            max1 = stack->num;
-        } else if (stack->num > max2) {
-            max3 = max2;
-            max2 = stack->num;
-        } else if (stack->num > max3) {
-            max3 = stack->num;
-        }
-        stack = stack->next;
-    }
-    if (max3 == INTMIN) {
-        return -1;
-    }
-    return max3;
+	while (stack != NULL)
+	{
+		if (stack->num > max1)
+		{
+			max3 = max2;
+			max2 = max1;
+			max1 = stack->num;
+		}
+		else if (stack->num > max2)
+		{
+			max3 = max2;
+			max2 = stack->num;
+		}
+		else if (stack->num > max3)
+		{
+			max3 = stack->num;
+		}
+		stack = stack->next;
+	}
+	if (max3 == INTMIN)
+	{
+		return (-1);
+	}
+	return (max3);
 }

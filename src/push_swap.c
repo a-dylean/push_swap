@@ -6,16 +6,16 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 18:21:22 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 14:51:24 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 // for development, remove later
-void print_list(t_stack *head, char stack)
+void	print_list(t_stack *head, char stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = head;
 	while (temp != NULL)
@@ -25,9 +25,9 @@ void print_list(t_stack *head, char stack)
 	}
 }
 
-int ft_stack_is_sorted(t_stack *stack)
+int	ft_stack_is_sorted(t_stack *stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	temp = stack;
 	while (temp->next)
@@ -39,10 +39,10 @@ int ft_stack_is_sorted(t_stack *stack)
 	return (1);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack **stack_a;
-	t_stack **stack_b;
+	t_stack	**stack_a;
+	t_stack	**stack_b;
 
 	stack_a = (t_stack **)malloc(sizeof(t_stack *));
 	*stack_a = NULL;
@@ -65,11 +65,9 @@ int main(int argc, char **argv)
 		ft_sort_three(&*stack_a);
 	else
 		ft_sort(&*stack_a, &*stack_b);
-
 	// printing the stacks for development, remove later
 	// print_list(*stack_a, 'a');
 	// print_list(*stack_b, 'b');
-
 	// free all memory
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
