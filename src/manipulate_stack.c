@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 14:51:16 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:17:02 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,11 @@ t_stack	find_max_node(t_stack *stack)
 {
 	t_stack	max_node;
 	int		max_value;
-
+    
 	max_value = stack->num;
-	while (stack != NULL)
+    max_node.index = stack->index;
+    max_node.num = max_value;
+	while (stack)
 	{
 		if (stack->num > max_value)
 		{

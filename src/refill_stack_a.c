@@ -3,10 +3,10 @@
 void	refill_stack_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*last_node;
-
-	while (ft_list_len(*stack_b) != 0)
+    
+    last_node = ft_get_last_node(*stack_a);
+	while (last_node && ft_list_len(*stack_b) != 0)
 	{
-		last_node = ft_get_last_node(*stack_a);
 		find_and_push_max(stack_a, stack_b);
 		if (ft_stack_is_sorted(*stack_a) == 0)
 		{
@@ -17,7 +17,7 @@ void	refill_stack_a(t_stack **stack_a, t_stack **stack_b)
 		}
 	}
 	last_node = ft_get_last_node(*stack_a);
-	while (last_node->num < (*stack_a)->num)
+	while (last_node && (last_node->num < (*stack_a)->num))
 	{
 		ft_reverse_rotate(stack_a, 'a');
 		last_node = ft_get_last_node(*stack_a);
