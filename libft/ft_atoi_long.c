@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/09 16:26:49 by atonkopi          #+#    #+#             */
+/*   Updated: 2024/01/09 16:26:57 by atonkopi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-long ft_atoi_long(const char *str)
+long	ft_atoi_long(const char *str)
 {
 	long sign;
 	long result;
-	int	i;
+	int i;
 
 	sign = 1;
 	result = 0;

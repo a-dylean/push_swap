@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:00:59 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 14:54:24 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:31:48 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 {
-	int ratio;
-	int ceiling;
+	int	ratio;
+	int	ceiling;
 
 	ratio = calculate_ratio(ft_list_len(*stack_a));
 	ceiling = find_min_value(*stack_a);

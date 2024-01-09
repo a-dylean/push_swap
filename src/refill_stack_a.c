@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   refill_stack_a.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/09 16:30:28 by atonkopi          #+#    #+#             */
+/*   Updated: 2024/01/09 16:30:31 by atonkopi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 void	refill_stack_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*last_node;
-    
-    last_node = ft_get_last_node(*stack_a);
+
+	last_node = ft_get_last_node(*stack_a);
 	while (last_node && ft_list_len(*stack_b) != 0)
 	{
 		find_and_push_max(stack_a, stack_b);
@@ -26,13 +38,11 @@ void	refill_stack_a(t_stack **stack_a, t_stack **stack_b)
 
 void	find_and_push_max(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	max_node;
-	int		max_steps;
-	int		steps_to_top;
-	int		steps_to_bottom;
+	int	max_steps;
+	int	steps_to_top;
+	int	steps_to_bottom;
 
-	max_node = find_max_node(*stack_b);
-	max_steps = steps_to_node(*stack_b, max_node);
+	max_steps = steps_to_node(*stack_b, find_max_node(*stack_b));
 	steps_to_top = max_steps;
 	steps_to_bottom = ft_list_len(*stack_b) - max_steps;
 	if (steps_to_top <= steps_to_bottom)
