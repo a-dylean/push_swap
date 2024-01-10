@@ -6,15 +6,15 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 18:18:25 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:46:03 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_stack_is_sorted(t_stack *stack)
+int	ft_stack_is_sorted(t_node *stack)
 {
-	t_stack	*temp;
+	t_node	*temp;
 
 	temp = stack;
 	while (temp->next)
@@ -26,11 +26,11 @@ int	ft_stack_is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	ft_sort(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	stack_len;
 
-	stack_len = ft_list_len(*stack_a);
+	stack_len = ft_stack_len(*stack_a);
 	if (stack_len == 2)
 		ft_sort_two(&*stack_a);
 	else if (stack_len == 3)
@@ -41,13 +41,13 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 
 int	main(int argc, char **argv)
 {
-	t_stack	**stack_a;
-	t_stack	**stack_b;
+	t_node	**stack_a;
+	t_node	**stack_b;
 
-	stack_a = (t_stack **)malloc(sizeof(t_stack *));
+	stack_a = (t_node **)malloc(sizeof(t_node *));
 	if (!stack_a)
 		exit(0);
-	stack_b = (t_stack **)malloc(sizeof(t_stack *));
+	stack_b = (t_node **)malloc(sizeof(t_node *));
 	if (!stack_b)
 		exit(0);
 	*stack_a = NULL;

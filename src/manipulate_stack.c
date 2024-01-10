@@ -6,15 +6,15 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 18:18:53 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:59:08 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_add_node_back(t_stack **stack, t_stack *new_node)
+void	ft_add_node_back(t_node **stack, t_node *new_node)
 {
-	t_stack	*temp;
+	t_node	*temp;
 
 	if (!new_node)
 		return ;
@@ -27,7 +27,7 @@ void	ft_add_node_back(t_stack **stack, t_stack *new_node)
 		*stack = new_node;
 }
 
-t_stack	*ft_get_last_node(t_stack *head)
+t_node	*ft_get_last_node(t_node *head)
 {
 	if (!head)
 		return (NULL);
@@ -36,10 +36,10 @@ t_stack	*ft_get_last_node(t_stack *head)
 	return (head);
 }
 
-int	ft_list_len(t_stack *head)
+int	ft_stack_len(t_node *head)
 {
 	int		len;
-	t_stack	*temp;
+	t_node	*temp;
 
 	len = 0;
 	temp = head;
@@ -51,9 +51,9 @@ int	ft_list_len(t_stack *head)
 	return (len);
 }
 
-void	ft_update_index(t_stack **stack)
+void	ft_update_index(t_node **stack)
 {
-	t_stack	*temp;
+	t_node	*temp;
 	int		i;
 
 	i = 0;
@@ -66,9 +66,9 @@ void	ft_update_index(t_stack **stack)
 	}
 }
 
-void	ft_free_stack(t_stack **stack)
+void	ft_free_stack(t_node **stack)
 {
-	t_stack	*tmp;
+	t_node	*tmp;
 
 	while (*stack)
 	{
@@ -78,7 +78,7 @@ void	ft_free_stack(t_stack **stack)
 	}
 }
 
-int	find_min_value(t_stack *stack)
+int	ft_find_min_num(t_node *stack)
 {
 	int	min_value;
 
@@ -96,9 +96,9 @@ int	find_min_value(t_stack *stack)
 	return (min_value);
 }
 
-t_stack	find_max_node(t_stack *stack)
+t_node	ft_find_max_node(t_node *stack)
 {
-	t_stack	max_node;
+	t_node	max_node;
 	int		max_value;
 
 	max_value = stack->num;
@@ -117,7 +117,7 @@ t_stack	find_max_node(t_stack *stack)
 	return (max_node);
 }
 
-int	find_third_largest(t_stack *stack)
+int	ft_find_third_largest_num(t_node *stack)
 {
 	int	max1;
 	int	max2;
@@ -146,4 +146,19 @@ int	find_third_largest(t_stack *stack)
 	if (max3 == INTMIN)
 		return (-1);
 	return (max3);
+}
+
+int	ft_get_steps_to_head(t_node *stack, t_node node)
+{
+	int	steps;
+
+	steps = 0;
+	if (node.index == -1 || !stack)
+		return (-1);
+	while (stack->num != node.num)
+	{
+		stack = stack->next;
+		steps++;
+	}
+	return (steps);
 }

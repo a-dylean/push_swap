@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 18:25:44 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:45:18 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void	ft_intsize_check(char **argv)
 	}
 }
 
-void	ft_check_duplicates(t_stack *stack)
+void	ft_check_duplicates(t_node *stack)
 {
-	t_stack	*temp;
-	t_stack	*temp2;
+	t_node	*temp;
+	t_node	*temp2;
 
 	temp = stack;
 	while (temp)

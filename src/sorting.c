@@ -6,19 +6,19 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:00:59 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 19:26:32 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:46:16 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_sort_two(t_stack **stack_a)
+void	ft_sort_two(t_node **stack_a)
 {
 	if ((*stack_a)->num > (*stack_a)->next->num)
 		ft_swap(stack_a, 'a');
 }
 
-void	ft_sort_three(t_stack **stack_a)
+void	ft_sort_three(t_node **stack_a)
 {
 	int	first;
 	int	second;
@@ -45,14 +45,14 @@ void	ft_sort_three(t_stack **stack_a)
 		ft_reverse_rotate(&*stack_a, 'a');
 }
 
-void	ft_sort_complex(t_stack **stack_a, t_stack **stack_b)
+void	ft_sort_complex(t_node **stack_a, t_node **stack_b)
 {
 	int	ratio;
 	int	ceiling;
 
-	ratio = calculate_ratio(ft_list_len(*stack_a));
-	ceiling = find_min_value(*stack_a);
-	fill_stack_b(stack_a, stack_b, ratio, ceiling);
+	ratio = calculate_ratio(ft_stack_len(*stack_a));
+	ceiling = ft_find_min_num(*stack_a);
+	ft_fill_stack_b(stack_a, stack_b, ratio, ceiling);
 	ft_sort_three(&*stack_a);
-	refill_stack_a(stack_a, stack_b);
+	ft_refill_stack_a(stack_a, stack_b);
 }

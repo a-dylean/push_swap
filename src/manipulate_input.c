@@ -6,17 +6,17 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:12 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/05 15:02:35 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:45:45 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*ft_create_node(int num, int index)
+t_node	*ft_create_node(int num, int index)
 {
-	t_stack	*new;
+	t_node	*new;
 
-	new = malloc(sizeof(t_stack));
+	new = malloc(sizeof(t_node));
 	if (!new)
 		return (NULL);
 	new->num = num;
@@ -25,9 +25,9 @@ t_stack	*ft_create_node(int num, int index)
 	return (new);
 }
 
-void	ft_create_list(t_stack **stack, int argc, char **argv)
+void	ft_create_list(t_node **stack, int argc, char **argv)
 {
-	t_stack	*next;
+	t_node	*next;
 	int		i;
 
 	i = 1;

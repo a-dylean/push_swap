@@ -6,15 +6,15 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:34:01 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/09 18:26:01 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:45:38 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_swap(t_stack **stack, char stack_name)
+void	ft_swap(t_node **stack, char stack_name)
 {
-	t_stack	*temp;
+	t_node	*temp;
 
 	if (!stack || !stack_name)
 		return ;
@@ -27,9 +27,9 @@ void	ft_swap(t_stack **stack, char stack_name)
 	ft_printf("s%c\n", stack_name);
 }
 
-void	ft_push(t_stack **src, t_stack **dest, char stack_name)
+void	ft_push(t_node **src, t_node **dest, char stack_name)
 {
-	t_stack	*temp;
+	t_node	*temp;
 
 	temp = (*src);
 	(*src) = (*src)->next;
@@ -40,10 +40,10 @@ void	ft_push(t_stack **src, t_stack **dest, char stack_name)
 	ft_printf("p%c\n", stack_name);
 }
 
-void	ft_rotate(t_stack **stack, char stack_name)
+void	ft_rotate(t_node **stack, char stack_name)
 {
-	t_stack	*first;
-	t_stack	*last;
+	t_node	*first;
+	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
@@ -56,10 +56,10 @@ void	ft_rotate(t_stack **stack, char stack_name)
 	ft_printf("r%c\n", stack_name);
 }
 
-void	ft_reverse_rotate(t_stack **stack, char stack_name)
+void	ft_reverse_rotate(t_node **stack, char stack_name)
 {
-	t_stack	*prev;
-	t_stack	*last;
+	t_node	*prev;
+	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
