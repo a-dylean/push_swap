@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:00:39 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:45:30 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:40:48 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_push_to_stack_b(t_node **stack_a, t_node **stack_b, t_node node_to_move,
 	int	steps_to_bottom;
 	int	ratio;
 	
-	ratio = calculate_ratio(ft_stack_len(*stack_a));
+	ratio = ft_calculate_ratio(ft_stack_len(*stack_a));
 	steps_to_top = ft_get_steps_to_head(*stack_a, node_to_move);
 	steps_to_bottom = ft_stack_len(*stack_a) - steps_to_top;
 	while (node_to_move.index >= 0 && ((*stack_a)->num != node_to_move.num))

@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:12 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:45:45 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:38:25 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,21 @@ t_node	*ft_create_node(int num, int index)
 	new->index = index;
 	new->next = NULL;
 	return (new);
+}
+
+void	ft_add_node_back(t_node **stack, t_node *new_node)
+{
+	t_node	*temp;
+
+	if (!new_node)
+		return ;
+	if (*stack)
+	{
+		temp = ft_get_last_node(*stack);
+		temp->next = new_node;
+	}
+	else
+		*stack = new_node;
 }
 
 void	ft_create_list(t_node **stack, int argc, char **argv)

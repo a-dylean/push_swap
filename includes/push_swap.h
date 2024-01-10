@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:47:14 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:50:15 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct t_node
 }					t_node;
 
 void				ft_exit(void);
-int					calculate_ratio(int stack_len);
+int					ft_calculate_ratio(int stack_len);
 void				ft_errors_check(int argc, char **argv);
 void				ft_char_check(int argc, char **argv);
 void				ft_check_duplicates(t_node *stack);
@@ -47,6 +47,7 @@ t_node				ft_find_max_node(t_node *stack);
 void				ft_sort_two(t_node **stack_a);
 void				ft_sort_three(t_node **stack_a);
 void				ft_sort_complex(t_node **stack_a, t_node **stack_b);
+void				ft_sort(t_node **stack_a, t_node **stack_b);
 void				ft_swap(t_node **stack, char stack_name);
 void				ft_push(t_node **src, t_node **dest, char stack_name);
 void				ft_rotate(t_node **stack, char stack_name);

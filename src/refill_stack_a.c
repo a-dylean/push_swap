@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:30:28 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:00:19 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:46:17 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,3 @@ void	ft_refill_stack_a(t_node **stack_a, t_node **stack_b)
 		last_node = ft_get_last_node(*stack_a);
 	}
 }
-

@@ -6,38 +6,11 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:46:03 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:49:14 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	ft_stack_is_sorted(t_node *stack)
-{
-	t_node	*temp;
-
-	temp = stack;
-	while (temp->next)
-	{
-		if (temp->num > temp->next->num)
-			return (0);
-		temp = temp->next;
-	}
-	return (1);
-}
-
-void	ft_sort(t_node **stack_a, t_node **stack_b)
-{
-	int	stack_len;
-
-	stack_len = ft_stack_len(*stack_a);
-	if (stack_len == 2)
-		ft_sort_two(&*stack_a);
-	else if (stack_len == 3)
-		ft_sort_three(&*stack_a);
-	else
-		ft_sort_complex(&*stack_a, &*stack_b);
-}
 
 int	main(int argc, char **argv)
 {

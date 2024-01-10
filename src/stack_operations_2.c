@@ -1,81 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manipulate_stack.c                                 :+:      :+:    :+:   */
+/*   stack_operations_2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:59:08 by atonkopi         ###   ########.fr       */
+/*   Created: 2024/01/10 17:33:01 by atonkopi          #+#    #+#             */
+/*   Updated: 2024/01/10 17:48:44 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_add_node_back(t_node **stack, t_node *new_node)
+int	ft_stack_is_sorted(t_node *stack)
 {
 	t_node	*temp;
 
-	if (!new_node)
-		return ;
-	if (*stack)
+	temp = stack;
+	while (temp->next)
 	{
-		temp = ft_get_last_node(*stack);
-		temp->next = new_node;
+		if (temp->num > temp->next->num)
+			return (0);
+		temp = temp->next;
 	}
+	return (1);
+}
+
+int	ft_calculate_ratio(int stack_len)
+{
+	if (stack_len < 10)
+		return (1);
+	else if (stack_len < 100)
+		return ((stack_len - 10) * 0.04 + 1);
+	else if (stack_len < 500)
+		return ((stack_len - 100) * 0.02 + 14);
 	else
-		*stack = new_node;
-}
-
-t_node	*ft_get_last_node(t_node *head)
-{
-	if (!head)
-		return (NULL);
-	while (head->next)
-		head = head->next;
-	return (head);
-}
-
-int	ft_stack_len(t_node *head)
-{
-	int		len;
-	t_node	*temp;
-
-	len = 0;
-	temp = head;
-	while (temp != NULL)
-	{
-		len++;
-		temp = temp->next;
-	}
-	return (len);
-}
-
-void	ft_update_index(t_node **stack)
-{
-	t_node	*temp;
-	int		i;
-
-	i = 0;
-	temp = *stack;
-	while (temp)
-	{
-		temp->index = i;
-		temp = temp->next;
-		i++;
-	}
-}
-
-void	ft_free_stack(t_node **stack)
-{
-	t_node	*tmp;
-
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
+		return ((stack_len - 500) * 0.006 + 30);
 }
 
 int	ft_find_min_num(t_node *stack)
@@ -143,22 +103,5 @@ int	ft_find_third_largest_num(t_node *stack)
 			max3 = stack->num;
 		stack = stack->next;
 	}
-	if (max3 == INTMIN)
-		return (-1);
 	return (max3);
-}
-
-int	ft_get_steps_to_head(t_node *stack, t_node node)
-{
-	int	steps;
-
-	steps = 0;
-	if (node.index == -1 || !stack)
-		return (-1);
-	while (stack->num != node.num)
-	{
-		stack = stack->next;
-		steps++;
-	}
-	return (steps);
 }
