@@ -104,7 +104,6 @@ void	move_to_b(t_stack **stack_a, t_stack **stack_b, t_stack node_to_move,
 	ft_push(stack_a, stack_b, 'b');
 	// If the top value in stack_b is smaller than the previous value,
 	//	rotate stack_b
-	// ft_printf("ratio: %d\n", ratio);
 	// ft_printf("ceiling: %d\n", ceiling);
 	// if ((*stack_b)->next != NULL && (*stack_b)->num < (*stack_b)->next->num)
 	if ((*stack_b)->num < ceiling - ratio)

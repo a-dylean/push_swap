@@ -51,7 +51,6 @@ void				fill_stack_b(t_stack **stack_a, t_stack **stack_b,
 						int ratio, int ceiling);
 void				ft_update_index(t_stack **stack);
 int					calculate_ratio(int stack_len);
-int					calculate_ceiling(t_stack *stack);
 void				ft_free_stack(t_stack **stack);
 int					find_min_value(t_stack *stack);
 t_stack				find_max_node(t_stack *stack);

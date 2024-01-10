@@ -15,19 +15,12 @@
 int	calculate_ratio(int stack_len)
 {
 	if (stack_len < 10)
-	{
 		return (1);
-	}
 	else if (stack_len < 100)
-	{
 		return ((stack_len - 10) * 0.04 + 1);
-	}
 	else if (stack_len < 500)
-	{
 		return ((stack_len - 100) * 0.02 + 14);
-	}
 	else
-	{
 		return ((stack_len - 500) * 0.006 + 30);
-	}
 }
+//ARG=`ruby -e "puts (-100...-0).to_a.shuffle.join(' ')"`
