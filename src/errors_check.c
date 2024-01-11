@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 16:45:18 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:34:30 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	ft_char_check(int argc, char **argv)
 	i = 1;
 	if (argc == 2)
 		i = 0;
+	if (!argv[i])
+			ft_exit();
 	while (argv[i])
 	{
 		j = 0;
