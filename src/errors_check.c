@@ -6,51 +6,89 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/11 15:34:30 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:32:21 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_errors_check(int argc, char **argv)
-{
-	if (argc == 1)
-		exit(0);
-	ft_char_check(argc, argv);
-	ft_intsize_check(argv);
-}
-
-void	ft_char_check(int argc, char **argv)
+int	ft_chars_check(char *str)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	if (argc == 2)
-		i = 0;
-	if (!argv[i])
-			ft_exit();
-	while (argv[i])
+	i = 0;
+	if (!str[i])
+		ft_exit();
+	while (str[i])
 	{
-		j = 0;
-		while (j < (int)ft_strlen(argv[i]))
+		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '-'
+			&& str[i] != '+')
 		{
-			if (!ft_isdigit(argv[i][j]))
-			{
-				if (j == 0 && ft_strlen(argv[i]) != 1 && (argv[i][j] == '-'
-					|| argv[i][j] == '+'))
-				{
-					j++;
-					continue ;
-				}
-				ft_exit();
-			}
-			j++;
+			ft_exit();
+			return (0);
 		}
-		// if (argv[i][j] == '\0' && ft_strlen(argv[i]) > 0)
-		// 	ft_exit();
 		i++;
 	}
+	return (1);
+}
+
+char	**ft_add_string_to_array(char **array, char *new_str)
+{
+	int		i;
+	int		j;
+	char	**new_array;
+
+	i = 0;
+	j = 0;
+	while (array[i])
+		i++;
+	new_array = malloc((i + 2) * sizeof(char *));
+	if (!new_array)
+		return (NULL);
+	while (j < i)
+	{
+		new_array[j] = array[j];
+		j++;
+	}
+	new_array[i] = ft_strdup(new_str);
+	if (!new_array[i])
+	{
+		free(new_array);
+		return (NULL);
+	}
+	new_array[i + 1] = NULL;
+	free(array);
+	return (new_array);
+}
+
+void	ft_errors_check(char **argv, t_node **stack_a)
+{
+	int		i;
+	char	**temp;
+	char	**temp2;
+	int		j;
+
+	temp2 = malloc(2);
+	if (!temp2)
+		exit(0);
+	i = 1;
+	while (argv[i])
+	{
+		if (ft_chars_check(argv[i]))
+		{
+			j = 0;
+			temp = ft_split(argv[i], ' ');
+			while (temp[j])
+			{
+				temp2 = ft_add_string_to_array(temp2, temp[j]);
+				j++;
+			}
+		}
+		i++;
+	}
+	argv = temp2;
+	ft_intsize_check(argv);
+	ft_create_list(stack_a, argv);
 }
 
 void	ft_intsize_check(char **argv)
@@ -68,7 +106,7 @@ void	ft_intsize_check(char **argv)
 	}
 }
 
-void	ft_check_duplicates(t_node *stack)
+void	ft_duplicates_check(t_node *stack)
 {
 	t_node	*temp;
 	t_node	*temp2;

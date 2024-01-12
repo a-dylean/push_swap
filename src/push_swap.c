@@ -6,11 +6,19 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:49:14 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:31:33 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void ft_parse_input(int argc, char **argv, t_node **stack_a)
+{
+	if (argc == 1)
+		exit(0);
+	ft_errors_check(argv, stack_a);	
+	ft_duplicates_check(*stack_a);
+}
 
 int	main(int argc, char **argv)
 {
@@ -25,11 +33,7 @@ int	main(int argc, char **argv)
 		exit(0);
 	*stack_a = NULL;
 	*stack_b = NULL;
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	ft_errors_check(argc, argv);
-	ft_create_list(stack_a, argc, argv);
-	ft_check_duplicates(*stack_a);
+	ft_parse_input(argc, argv, stack_a);
 	if (ft_stack_is_sorted(*stack_a))
 	{
 		ft_free_stack(stack_a);

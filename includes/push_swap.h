@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:50:15 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:31:49 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,17 @@ typedef struct t_node
 	struct t_node	*next;
 }					t_node;
 
+void				ft_parse_input(int argc, char **argv, t_node **stack_a);
 void				ft_exit(void);
+char				**ft_add_string_to_array(char **array, char *new_str);
 int					ft_calculate_ratio(int stack_len);
-void				ft_errors_check(int argc, char **argv);
-void				ft_char_check(int argc, char **argv);
-void				ft_check_duplicates(t_node *stack);
+void				ft_errors_check(char **argv, t_node **stack_a);
+int					ft_chars_check(char *str);
+void				ft_duplicates_check(t_node *stack);
 void				ft_intsize_check(char **argv);
 int					ft_stack_is_sorted(t_node *stack);
 t_node				*ft_create_node(int num, int index);
-void				ft_create_list(t_node **stack, int argc, char **argv);
+void				ft_create_list(t_node **stack, char **argv);
 void				ft_add_node_back(t_node **stack, t_node *new_node);
 t_node				*ft_get_last_node(t_node *head);
 int					ft_stack_len(t_node *head);
