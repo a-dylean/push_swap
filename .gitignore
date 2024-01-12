@@ -5,3 +5,7 @@ push_swap
 .vscode
 checker
 push_swap_visualizer
+push_swap_tester
+push_swap_testeur_max
+push_swap-testeur-max/
+push_swap_run_args.log
