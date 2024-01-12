@@ -47,6 +47,8 @@ void	ft_char_check(int argc, char **argv)
 			}
 			j++;
 		}
+		// if (argv[i][j] == '\0' && ft_strlen(argv[i]) > 0)
+		// 	ft_exit();
 		i++;
 	}
 }

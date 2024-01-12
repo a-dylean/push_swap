@@ -86,12 +86,7 @@ void	ft_push_to_stack_b(t_node **stack_a, t_node **stack_b, t_node node_to_move,
 		else
 			ft_reverse_rotate(stack_a, 'a');
 	}
-	//if (ceiling)
 	ft_push(stack_a, stack_b, 'b');
-	// If the top value in stack_b is smaller than the previous value,
-	// 	rotate stack_b, if it's as efficient then no need to recalculate the ratio
-	//ft_printf("ceiling: %d\n", ceiling);
-	//if ((*stack_b)->next != NULL && (*stack_b)->num < (*stack_b)->next->num)
 	if ((*stack_b)->num < ceiling - ratio)
 		ft_rotate(stack_b, 'b');
 }

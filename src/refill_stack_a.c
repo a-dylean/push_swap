@@ -56,10 +56,10 @@ void	ft_refill_stack_a(t_node **stack_a, t_node **stack_b)
 				ft_rotate(stack_a, 'a');
 		}
 	}
-	last_node = ft_get_last_node(*stack_a);
-	while (last_node && (last_node->num < (*stack_a)->num))
-	{
-		ft_reverse_rotate(stack_a, 'a');
-		last_node = ft_get_last_node(*stack_a);
-	}
+	// last_node = ft_get_last_node(*stack_a);
+	// while (last_node && (last_node->num < (*stack_a)->num))
+	// {
+	// 	ft_reverse_rotate(stack_a, 'a');
+	// 	last_node = ft_get_last_node(*stack_a);
+	// }
 }
