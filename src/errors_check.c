@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/12 17:32:21 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:39:24 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,36 +32,7 @@ int	ft_chars_check(char *str)
 	return (1);
 }
 
-char	**ft_add_string_to_array(char **array, char *new_str)
-{
-	int		i;
-	int		j;
-	char	**new_array;
-
-	i = 0;
-	j = 0;
-	while (array[i])
-		i++;
-	new_array = malloc((i + 2) * sizeof(char *));
-	if (!new_array)
-		return (NULL);
-	while (j < i)
-	{
-		new_array[j] = array[j];
-		j++;
-	}
-	new_array[i] = ft_strdup(new_str);
-	if (!new_array[i])
-	{
-		free(new_array);
-		return (NULL);
-	}
-	new_array[i + 1] = NULL;
-	free(array);
-	return (new_array);
-}
-
-void	ft_errors_check(char **argv, t_node **stack_a)
+char	**ft_argv_check(char **argv)
 {
 	int		i;
 	char	**temp;
@@ -76,8 +47,8 @@ void	ft_errors_check(char **argv, t_node **stack_a)
 	{
 		if (ft_chars_check(argv[i]))
 		{
-			j = 0;
 			temp = ft_split(argv[i], ' ');
+			j = 0;
 			while (temp[j])
 			{
 				temp2 = ft_add_string_to_array(temp2, temp[j]);
@@ -87,8 +58,7 @@ void	ft_errors_check(char **argv, t_node **stack_a)
 		i++;
 	}
 	argv = temp2;
-	ft_intsize_check(argv);
-	ft_create_list(stack_a, argv);
+	return (argv);
 }
 
 void	ft_intsize_check(char **argv)
@@ -123,6 +93,35 @@ void	ft_duplicates_check(t_node *stack)
 		}
 		temp = temp->next;
 	}
+}
+
+char	**ft_add_string_to_array(char **array, char *new_str)
+{
+	int		i;
+	int		j;
+	char	**new_array;
+
+	i = 0;
+	j = 0;
+	while (array[i])
+		i++;
+	new_array = malloc((i + 2) * sizeof(char *));
+	if (!new_array)
+		return (NULL);
+	while (j < i)
+	{
+		new_array[j] = array[j];
+		j++;
+	}
+	new_array[i] = ft_strdup(new_str);
+	if (!new_array[i])
+	{
+		free(new_array);
+		return (NULL);
+	}
+	new_array[i + 1] = NULL;
+	free(array);
+	return (new_array);
 }
 
 void	ft_exit(void)

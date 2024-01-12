@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/12 17:31:49 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:40:58 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void				ft_parse_input(int argc, char **argv, t_node **stack_a);
 void				ft_exit(void);
 char				**ft_add_string_to_array(char **array, char *new_str);
 int					ft_calculate_ratio(int stack_len);
-void				ft_errors_check(char **argv, t_node **stack_a);
+char				**ft_argv_check(char **argv);
 int					ft_chars_check(char *str);
 void				ft_duplicates_check(t_node *stack);
 void				ft_intsize_check(char **argv);

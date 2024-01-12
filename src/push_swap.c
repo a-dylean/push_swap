@@ -6,17 +6,19 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/12 17:31:33 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:41:54 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ft_parse_input(int argc, char **argv, t_node **stack_a)
+void	ft_parse_input(int argc, char **argv, t_node **stack_a)
 {
 	if (argc == 1)
 		exit(0);
-	ft_errors_check(argv, stack_a);	
+	argv = ft_argv_check(argv);
+	ft_intsize_check(argv);
+	ft_create_list(stack_a, argv);
 	ft_duplicates_check(*stack_a);
 }
 
