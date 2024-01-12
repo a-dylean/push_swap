@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/12 17:48:23 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/12 17:51:47 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	**ft_argv_check(char **argv)
 	argv = temp2;
 	return (argv);
 }
+
 int	ft_chars_check(char *str)
 {
 	int	i;
