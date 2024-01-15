@@ -38,13 +38,13 @@ int	main(int argc, char **argv)
 	ft_parse_input(argc, argv, stack_a);
 	if (ft_stack_is_sorted(*stack_a))
 	{
-		ft_free_stack(stack_a);
-		ft_free_stack(stack_b);
+		ft_free_stack(&*stack_a);
+		ft_free_stack(&*stack_b);
 		exit(0);
 	}
 	else
 		ft_sort(stack_a, stack_b);
-	ft_free_stack(stack_a);
-	ft_free_stack(stack_b);
+	ft_free_stack(&*stack_a);
+	ft_free_stack(&*stack_b);
 	return (0);
 }

@@ -16,12 +16,15 @@ void	ft_free_stack(t_node **stack)
 {
 	t_node	*tmp;
 
+	if (!stack)
+		return ;
 	while (*stack)
 	{
 		tmp = (*stack)->next;
 		free(*stack);
 		*stack = tmp;
 	}
+	*stack = NULL;
 }
 
 t_node	*ft_get_last_node(t_node *head)

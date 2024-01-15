@@ -43,6 +43,6 @@ char	**ft_add_string_to_array(char **array, char *new_str)
 
 void	ft_exit(void)
 {
-	ft_putstr_fd("Error\n", 2);
+	ft_printf("Error\n");
 	exit(0);
 }

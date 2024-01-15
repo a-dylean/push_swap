@@ -70,13 +70,11 @@ t_node	ft_get_optimal_node(t_node *stack, int ceiling)
 }
 
 void	ft_push_to_stack_b(t_node **stack_a, t_node **stack_b, t_node node_to_move,
-		int ceiling)
+		int margin)
 {
 	int	steps_to_top;
 	int	steps_to_bottom;
-	int	ratio;
-	
-	ratio = ft_calculate_ratio(ft_stack_len(*stack_a));
+
 	steps_to_top = ft_get_steps_to_head(*stack_a, node_to_move);
 	steps_to_bottom = ft_stack_len(*stack_a) - steps_to_top;
 	while (node_to_move.index >= 0 && ((*stack_a)->num != node_to_move.num))
@@ -87,7 +85,7 @@ void	ft_push_to_stack_b(t_node **stack_a, t_node **stack_b, t_node node_to_move,
 			ft_reverse_rotate(stack_a, 'a');
 	}
 	ft_push(stack_a, stack_b, 'b');
-	if ((*stack_b)->num < ceiling - ratio)
+	if ((*stack_b)->num < margin)
 		ft_rotate(stack_b, 'b');
 }
 
@@ -106,7 +104,7 @@ void	ft_fill_stack_b(t_node **stack_a, t_node **stack_b, int ratio,
 		node_to_move = ft_get_optimal_node(*stack_a, ceiling);
 		while (node_to_move.index >= 0 && stack_len > 3)
 		{
-			ft_push_to_stack_b(stack_a, stack_b, node_to_move, ceiling);
+			ft_push_to_stack_b(stack_a, stack_b, node_to_move, ceiling - ratio);
 			node_to_move = ft_get_optimal_node(*stack_a, ceiling);
 			stack_len = ft_stack_len(*stack_a);
 		}
