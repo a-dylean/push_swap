@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:33:01 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:48:44 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:08:29 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_stack_is_sorted(t_node *stack)
 {
 	t_node	*temp;
 
+	if (!stack)
+		return (0);
 	temp = stack;
 	while (temp->next)
 	{

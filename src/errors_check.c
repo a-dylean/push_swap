@@ -6,24 +6,20 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/12 17:51:47 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:15:39 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-char	**ft_argv_check(char **argv)
+void	ft_argv_check(char **argv, int argc, t_node **stack_a)
 {
 	int		i;
 	int		j;
 	char	**temp;
-	char	**temp2;
 
-	temp2 = malloc(2);
-	if (!temp2)
-		exit(0);
 	i = 1;
-	while (argv[i])
+	while (i < argc)
 	{
 		if (ft_chars_check(argv[i]))
 		{
@@ -31,14 +27,15 @@ char	**ft_argv_check(char **argv)
 			j = 0;
 			while (temp[j])
 			{
-				temp2 = ft_add_string_to_array(temp2, temp[j]);
+				ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(temp[j]), 0));
 				j++;
 			}
 		}
 		i++;
+		
 	}
-	argv = temp2;
-	return (argv);
+	free_array(temp);
+	ft_update_index(stack_a);
 }
 
 int	ft_chars_check(char *str)
@@ -71,7 +68,7 @@ void	ft_intsize_check(char **argv)
 	{
 		num = ft_atoi_long(argv[i]);
 		if (num > INTMAX || num < INTMIN)
-			ft_exit();
+			ft_exit();	
 		i++;
 	}
 }
