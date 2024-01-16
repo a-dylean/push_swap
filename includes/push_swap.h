@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/12 17:40:58 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:47:14 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ t_node				ft_find_first_node_up_to_ceiling(t_node *stack,
 t_node				ft_find_second_node_up_to_ceiling(t_node *stack,
 						int ceiling);
 t_node				ft_get_optimal_node(t_node *stack, int ceiling);
-void				ft_push_max_node(t_node **stack_a,
-						t_node **stack_b, t_node max_node);
-void ft_push_to_stack_a(t_node **stack_a, t_node **stack_b);
-void ft_sort_stack_a(t_node **stack_a, t_node *last_node);						
+void				ft_push_max_node(t_node **stack_a, t_node **stack_b,
+						t_node max_node);
+void				ft_push_to_stack_a(t_node **stack_a, t_node **stack_b);
+void				ft_sort_stack_a(t_node **stack_a, t_node *last_node);
 void				ft_refill_stack_a(t_node **stack_a, t_node **stack_b);
 int					ft_get_steps_to_head(t_node *stack, t_node node);
 #endif

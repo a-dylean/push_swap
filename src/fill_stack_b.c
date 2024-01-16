@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:00:39 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:40:48 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/16 14:50:37 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ t_node	ft_get_optimal_node(t_node *stack, int ceiling)
 		return (second_node_to_move);
 }
 
-void	ft_push_to_stack_b(t_node **stack_a, t_node **stack_b, t_node node_to_move,
-		int margin)
+void	ft_push_to_stack_b(t_node **stack_a, t_node **stack_b,
+		t_node node_to_move, int margin)
 {
 	int	steps_to_top;
 	int	steps_to_bottom;
