@@ -43,7 +43,7 @@ int	ft_stack_len(t_node *head)
 
 	len = 0;
 	temp = head;
-	while (temp != NULL)
+	while (temp)
 	{
 		len++;
 		temp = temp->next;
