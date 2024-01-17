@@ -15,12 +15,18 @@
 void	ft_parse_input(int argc, char **argv, t_node **stack_a)
 {
 	if (argc < 2)
+	{
+		ft_free_stack(&*stack_a);
 		exit(0);
+	}
 	//argv = ft_argv_check(argv);
 	ft_argv_check(argv, stack_a);
 	//ft_intsize_check(argv);
 	//ft_create_list(stack_a, argv);
-	ft_duplicates_check(*stack_a);
+	if (!ft_duplicates_check(*stack_a))
+	{
+		ft_exit(stack_a);
+	}
 }
 // static void ft_print_stack(t_node *stack, char stack_name)
 // {
@@ -44,12 +50,12 @@ int	main(int argc, char **argv)
 	stack_a = (t_node **)malloc(sizeof(t_node));
 	if (!stack_a)
 		exit(0);
+	*stack_a = NULL;
+	ft_parse_input(argc, argv, stack_a);
 	stack_b = (t_node **)malloc(sizeof(t_node));
 	if (!stack_b)
 		exit(0);
-	*stack_a = NULL;
-	*stack_b = NULL;
-	ft_parse_input(argc, argv, stack_a);
+	*stack_b = NULL;	
 	//ft_print_stack(*stack_a, 'a');
 	if (ft_stack_is_sorted(*stack_a))
 	{
