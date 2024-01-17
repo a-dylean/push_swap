@@ -12,6 +12,24 @@
 
 #include "../includes/push_swap.h"
 
+int ft_str_is_empty(char *str)
+{
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] == ' ')
+			count++;
+		i++;
+	}
+	if (count == i)
+		return (1);
+	return (0);
+}
+
 int ft_chars_check(char *str)
 {
 	int i;
@@ -53,21 +71,4 @@ int ft_duplicates_check(t_node *stack)
 		temp = temp->next;
 	}
 	return (1);
-}
-int ft_str_is_empty(char *str)
-{
-	int i;
-	int count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] == ' ')
-			count++;
-		i++;
-	}
-	if (count == i)
-		return (1);
-	return (0);
 }

@@ -15,7 +15,7 @@
 void ft_populate_stack(char **argv, t_node **stack_a)
 {
 	char **temp;
-	int index;
+	int i;
 
 	argv++;
 	temp = NULL;
@@ -26,13 +26,13 @@ void ft_populate_stack(char **argv, t_node **stack_a)
 		if (ft_strchr(*argv, ' '))
 		{
 			temp = ft_split(*argv, ' ');
-			index = 0;
-			while (temp[index] && ft_intsize_check(temp[index]))
-				ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(temp[index++]), -1));
+			i = 0;
+			while (temp[i] && ft_intsize_check(temp[i]))
+				ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(temp[i++]), 0));
 			temp = ft_free_array(temp);
 		}
 		else if (ft_intsize_check(*argv))
-			ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(*argv), -1));
+			ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(*argv), 0));
 		else
 			ft_exit(stack_a);	
 		argv++;
