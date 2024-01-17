@@ -14,15 +14,15 @@
 
 t_node	*ft_create_node(int num, int index)
 {
-	t_node	*new;
+	t_node	*new_node;
 
-	new = malloc(sizeof(t_node));
-	if (!new)
+	new_node = malloc(sizeof(t_node));
+	if (!new_node)
 		return (NULL);
-	new->num = num;
-	new->index = index;
-	new->next = NULL;
-	return (new);
+	new_node->num = num;
+	new_node->index = index;
+	new_node->next = NULL;
+	return (new_node);
 }
 
 void	ft_add_node_back(t_node **stack, t_node *new_node)
@@ -31,13 +31,17 @@ void	ft_add_node_back(t_node **stack, t_node *new_node)
 
 	if (!new_node)
 		return ;
-	if (*stack)
+	if (*stack && new_node)
 	{
 		temp = ft_get_last_node(*stack);
 		temp->next = new_node;
+		new_node->next = NULL;
 	}
 	else
+	{
 		*stack = new_node;
+		(*stack)->next = NULL;
+	}	
 }
 
 void	ft_create_list(t_node **stack, char **argv)

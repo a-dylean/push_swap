@@ -30,9 +30,10 @@ typedef struct t_node
 void				ft_parse_input(int argc, char **argv, t_node **stack_a);
 void				ft_exit(void);
 void				free_array(char **arr);
-char				**ft_add_string_to_array(char **array, char *new_str);
+int ft_str_is_empty(char *str);
+//char				**ft_add_string_to_array(char **array, char *new_str);
 int					ft_calculate_ratio(int stack_len);
-void	ft_argv_check(char **argv, int argc, t_node **stack_a);
+void	ft_argv_check(char **argv, t_node **stack_a);
 int					ft_chars_check(char *str);
 void				ft_duplicates_check(t_node *stack);
 void				ft_intsize_check(char **argv);

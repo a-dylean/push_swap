@@ -12,67 +12,55 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_argv_check(char **argv, int argc, t_node **stack_a)
+void	*ft_free_temp(char	**temp)
 {
-	int		i;
-	int		j;
-	char	**temp;
+	int	index;
 
-	i = 1;
-	while (i < argc)
+	index = 0;
+	while (temp[index])
+		free(temp[index++]);
+	free(temp);
+	return (NULL);
+}
+
+void ft_argv_check(char **argv, t_node **stack_a)
+{
+	char **temp;
+	int index;
+
+	argv++;
+	temp = NULL;
+	while (*argv)
 	{
-		if (ft_chars_check(argv[i]))
+		if (ft_str_is_empty(*argv) == 1)
+			ft_exit();
+		if (ft_strchr(*argv, ' '))
 		{
-			temp = ft_split(argv[i], ' ');
-			j = 0;
-			while (temp[j])
-			{
-				ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(temp[j]), 0));
-				j++;
-			}
+			temp = ft_split(*argv, ' ');
+			index = 0;
+			while (temp[index])
+				ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(temp[index++]), -1));
+			temp = ft_free_temp(temp);
 		}
-		i++;
-		
+		else
+			ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(*argv), -1));
+		argv++;
 	}
-	free_array(temp);
+	if (ft_stack_is_sorted(*stack_a) == 1)
+		exit(1);
 	ft_update_index(stack_a);
 }
-// char	**temp;
-// 	int		index;
 
-// 	argv++;
-// 	temp = NULL;
-// 	while (*argv)
-// 	{
-// 		if (if_empty(*argv) == 1)
-// 			ft_error();
-// 		if (ft_strchr(*argv, ' '))
-// 		{
-// 			temp = ft_split(*argv, ' ');
-// 			index = 0;
-// 			while (temp[index])
-// 				add_node(stack_a, new_node(ft_atoi_max(temp[index++]), -1));
-// 			temp = free_temp(temp);
-// 		}
-// 		else
-// 			add_node(stack_a, new_node(ft_atoi_max(*argv), -1));
-// 		argv++;
-// 	}
-// 	if (is_sorted(stack_a) == 1)
-// 		exit (1);
-// 	index_stack(stack_a, stack_size(*stack_a));
-
-int	ft_chars_check(char *str)
+int ft_chars_check(char *str)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	if (!str[i])
 		ft_exit();
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '-'
-			&& str[i] != '+')
+		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '-' && str[i] != '+')
 		{
 			ft_exit();
 			return (0);
@@ -82,25 +70,25 @@ int	ft_chars_check(char *str)
 	return (1);
 }
 
-void	ft_intsize_check(char **argv)
+void ft_intsize_check(char **argv)
 {
-	long	num;
-	int		i;
+	long num;
+	int i;
 
 	i = 0;
 	while (argv[i])
 	{
 		num = ft_atoi_long(argv[i]);
 		if (num > INTMAX || num < INTMIN)
-			ft_exit();	
+			ft_exit();
 		i++;
 	}
 }
 
-void	ft_duplicates_check(t_node *stack)
+void ft_duplicates_check(t_node *stack)
 {
-	t_node	*temp;
-	t_node	*temp2;
+	t_node *temp;
+	t_node *temp2;
 
 	temp = stack;
 	while (temp)
@@ -114,4 +102,21 @@ void	ft_duplicates_check(t_node *stack)
 		}
 		temp = temp->next;
 	}
+}
+int ft_str_is_empty(char *str)
+{
+	int i;
+	int count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		if (str[i] == ' ')
+			count++;
+		i++;
+	}
+	if (count == i)
+		return (1);
+	return (0);
 }

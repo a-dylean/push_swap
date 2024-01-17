@@ -17,7 +17,7 @@ void	ft_parse_input(int argc, char **argv, t_node **stack_a)
 	if (argc < 2)
 		exit(0);
 	//argv = ft_argv_check(argv);
-	ft_argv_check(argv, argc, stack_a);
+	ft_argv_check(argv, stack_a);
 	//ft_intsize_check(argv);
 	//ft_create_list(stack_a, argv);
 	ft_duplicates_check(*stack_a);
