@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	free_array(char **arr)
+void	*ft_free_array(char **arr)
 {
 	int	i;
 
@@ -26,6 +26,7 @@ void	free_array(char **arr)
 		}
 		free(arr);
 	}
+	return (NULL);
 }
 
 void	ft_exit(t_node **stack_a)

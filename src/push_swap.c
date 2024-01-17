@@ -19,10 +19,7 @@ void	ft_parse_input(int argc, char **argv, t_node **stack_a)
 		ft_free_stack(&*stack_a);
 		exit(0);
 	}
-	//argv = ft_argv_check(argv);
-	ft_argv_check(argv, stack_a);
-	//ft_intsize_check(argv);
-	//ft_create_list(stack_a, argv);
+	ft_populate_stack(argv, stack_a);
 	if (!ft_duplicates_check(*stack_a))
 	{
 		ft_exit(stack_a);

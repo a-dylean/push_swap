@@ -12,45 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-void	*ft_free_temp(char	**temp)
-{
-	int	index;
-
-	index = 0;
-	while (temp[index])
-		free(temp[index++]);
-	free(temp);
-	return (NULL);
-}
-
-void ft_argv_check(char **argv, t_node **stack_a)
-{
-	char **temp;
-	int index;
-
-	argv++;
-	temp = NULL;
-	while (*argv)
-	{
-		if (ft_str_is_empty(*argv) || !ft_chars_check(*argv))
-			ft_exit(stack_a);
-		if (ft_strchr(*argv, ' '))
-		{
-			temp = ft_split(*argv, ' ');
-			index = 0;
-			while (temp[index] && ft_intsize_check(temp[index]))
-				ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(temp[index++]), -1));
-			temp = ft_free_temp(temp);
-		}
-		else if (ft_intsize_check(*argv))
-			ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(*argv), -1));
-		else
-			ft_exit(stack_a);	
-		argv++;
-	}
-	ft_update_index(stack_a);
-}
-
 int ft_chars_check(char *str)
 {
 	int i;
