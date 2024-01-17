@@ -14,7 +14,7 @@
 
 void	ft_parse_input(int argc, char **argv, t_node **stack_a)
 {
-	if (argc == 1)
+	if (argc < 2)
 		exit(0);
 	//argv = ft_argv_check(argv);
 	ft_argv_check(argv, argc, stack_a);
@@ -41,10 +41,10 @@ int	main(int argc, char **argv)
 	t_node	**stack_a;
 	t_node	**stack_b;
 
-	stack_a = (t_node **)malloc(sizeof(t_node *));
+	stack_a = (t_node **)malloc(sizeof(t_node));
 	if (!stack_a)
 		exit(0);
-	stack_b = (t_node **)malloc(sizeof(t_node *));
+	stack_b = (t_node **)malloc(sizeof(t_node));
 	if (!stack_b)
 		exit(0);
 	*stack_a = NULL;

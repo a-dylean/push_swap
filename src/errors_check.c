@@ -37,6 +37,30 @@ void	ft_argv_check(char **argv, int argc, t_node **stack_a)
 	free_array(temp);
 	ft_update_index(stack_a);
 }
+// char	**temp;
+// 	int		index;
+
+// 	argv++;
+// 	temp = NULL;
+// 	while (*argv)
+// 	{
+// 		if (if_empty(*argv) == 1)
+// 			ft_error();
+// 		if (ft_strchr(*argv, ' '))
+// 		{
+// 			temp = ft_split(*argv, ' ');
+// 			index = 0;
+// 			while (temp[index])
+// 				add_node(stack_a, new_node(ft_atoi_max(temp[index++]), -1));
+// 			temp = free_temp(temp);
+// 		}
+// 		else
+// 			add_node(stack_a, new_node(ft_atoi_max(*argv), -1));
+// 		argv++;
+// 	}
+// 	if (is_sorted(stack_a) == 1)
+// 		exit (1);
+// 	index_stack(stack_a, stack_size(*stack_a));
 
 int	ft_chars_check(char *str)
 {
