@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:46:24 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/16 18:18:51 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:08:16 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_free_array(char **arr)
 
 void	ft_exit(t_node **stack_a)
 {
-	ft_free_stack(&*stack_a);
+	ft_free_stack(stack_a);
 	ft_printf("Error\n");
 	exit(0);
 }
