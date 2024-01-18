@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/16 18:34:25 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:10:24 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int	main(int argc, char **argv)
 	stack_b = (t_node **)malloc(sizeof(t_node));
 	if (!stack_b)
 		exit(0);
-	*stack_b = NULL;	
-	//ft_print_stack(*stack_a, 'a');
+	*stack_b = NULL;
+	// ft_print_stack(*stack_a, 'a');
 	if (ft_stack_is_sorted(*stack_a))
 	{
 		ft_free_stack(&*stack_a);

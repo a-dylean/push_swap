@@ -6,16 +6,16 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:15:39 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:10:39 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_str_is_empty(char *str)
+int	ft_str_is_empty(char *str)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -30,33 +30,35 @@ int ft_str_is_empty(char *str)
 	return (0);
 }
 
-int ft_chars_check(char *str)
+int	ft_chars_check(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '-' && str[i] != '+')
+		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '-'
+			&& str[i] != '+')
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int ft_intsize_check(char *str)
+int	ft_intsize_check(char *str)
 {
-	long num;
+	long	num;
+
 	num = ft_atoi_long(str);
 	if (num > INTMAX || num < INTMIN)
-			return (0);
+		return (0);
 	return (1);
 }
 
-int ft_duplicates_check(t_node *stack)
+int	ft_duplicates_check(t_node *stack)
 {
-	t_node *temp;
-	t_node *temp2;
+	t_node	*temp;
+	t_node	*temp2;
 
 	temp = stack;
 	while (temp)

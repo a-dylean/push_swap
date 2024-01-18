@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/16 19:13:57 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:09:38 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ typedef struct t_node
 void				ft_parse_input(int argc, char **argv, t_node **stack_a);
 void				ft_exit(t_node **stack_a);
 void				*ft_free_array(char **arr);
-int ft_str_is_empty(char *str);
+int					ft_str_is_empty(char *str);
 int					ft_calculate_ratio(int stack_len);
-void	ft_populate_stack(char **argv, t_node **stack_a);
+void				ft_populate_stack(char **argv, t_node **stack_a);
 int					ft_chars_check(char *str);
-int				ft_duplicates_check(t_node *stack);
-int				ft_intsize_check(char *str);
+int					ft_duplicates_check(t_node *stack);
+int					ft_intsize_check(char *str);
 int					ft_stack_is_sorted(t_node *stack);
 t_node				*ft_create_node(int num, int index);
 void				ft_add_node_back(t_node **stack, t_node *new_node);

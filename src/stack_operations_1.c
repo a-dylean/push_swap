@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/10 17:37:46 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:12:54 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_free_stack(t_node **stack)
 	while (head)
 	{
 		temp = head;
-		head = head ->next;
+		head = head->next;
 		free(temp);
 	}
 	free(stack);
