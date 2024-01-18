@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 17:45:45 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:27:57 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,6 @@ void	ft_parse_input(int argc, char **argv, t_node **stack_a)
 		ft_exit(stack_a);
 	}
 }
-// void ft_print_stack(t_node *stack, char stack_name)
-// {
-// 	t_node *temp;
-
-// 	temp = stack;
-// 	ft_printf("Stack %c:\n", stack_name);
-// 	while (temp)
-// 	{
-// 		ft_printf("num = %d, index = %d\n", temp->num, temp->index);
-// 		temp = temp->next;
-// 	}
-// 	ft_printf("\n");
-// }
 
 int	main(int argc, char **argv)
 {

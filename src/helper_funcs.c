@@ -6,11 +6,23 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:46:24 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 17:51:12 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:42:37 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_calculate_ratio(int stack_len)
+{
+	if (stack_len < 10)
+		return (1);
+	else if (stack_len < 100)
+		return ((stack_len - 10) * 0.04 + 1);
+	else if (stack_len < 500)
+		return ((stack_len - 100) * 0.02 + 14);
+	else
+		return ((stack_len - 500) * 0.006 + 30);
+}
 
 void	*ft_free_array(char **arr)
 {

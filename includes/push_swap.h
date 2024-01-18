@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 17:49:47 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:41:32 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,21 @@ typedef struct t_node
 	struct t_node	*next;
 }					t_node;
 
-// void				ft_print_stack(t_node *stack, char stack_name);
-void				ft_sort_nums(t_node **stack);
+/*parsing input and handling errors*/
+
 void				ft_parse_input(int argc, char **argv, t_node **stack_a);
 t_node				**ft_sorted_nums(t_node **stack);
 void				ft_match_nums_with_indexes(t_node **stack_a);
 int					ft_get_index(t_node *sorted_stack, int num);
-void				ft_exit(t_node **stack_a);
-void				*ft_free_array(char **arr);
-int					ft_str_is_empty(char *str);
-int					ft_calculate_ratio(int stack_len);
-void				ft_populate_stack(char **argv, t_node **stack_a);
 int					ft_chars_check(char *str);
 int					ft_duplicates_check(t_node *stack);
 int					ft_intsize_check(char *str);
+void				ft_exit(t_node **stack_a);
+
+/*stack operations*/
+
 int					ft_stack_is_sorted(t_node *stack);
+void				ft_populate_stack(char **argv, t_node **stack_a);
 t_node				*ft_create_node(int num, int index);
 void				ft_add_node_back(t_node **stack, t_node *new_node);
 t_node				*ft_get_last_node(t_node *head);
@@ -51,14 +51,14 @@ void				ft_update_index(t_node **stack);
 int					ft_find_min_num(t_node *stack);
 int					ft_find_third_largest_num(t_node *stack);
 t_node				ft_find_max_node(t_node *stack);
+int					ft_get_steps_to_head(t_node *stack, t_node node);
+
+/*sorting*/
+
 void				ft_sort_two(t_node **stack_a);
 void				ft_sort_three(t_node **stack_a);
 void				ft_sort_complex(t_node **stack_a, t_node **stack_b);
 void				ft_sort(t_node **stack_a, t_node **stack_b);
-void				ft_swap(t_node **stack, char stack_name);
-void				ft_push(t_node **src, t_node **dest, char stack_name);
-void				ft_rotate(t_node **stack, char stack_name);
-void				ft_reverse_rotate(t_node **stack, char stack_name);
 void				ft_push_to_stack_b(t_node **stack_a, t_node **stack_b,
 						t_node node_to_move, int margin);
 void				ft_fill_stack_b(t_node **stack_a, t_node **stack_b,
@@ -73,5 +73,19 @@ void				ft_push_max_node(t_node **stack_a, t_node **stack_b,
 void				ft_push_to_stack_a(t_node **stack_a, t_node **stack_b);
 void				ft_sort_stack_a(t_node **stack_a, t_node *last_node);
 void				ft_refill_stack_a(t_node **stack_a, t_node **stack_b);
-int					ft_get_steps_to_head(t_node *stack, t_node node);
+
+/*instructions*/
+
+void				ft_swap(t_node **stack, char stack_name);
+void				ft_push(t_node **src, t_node **dest, char stack_name);
+void				ft_rotate(t_node **stack, char stack_name);
+void				ft_reverse_rotate(t_node **stack, char stack_name);
+
+/*helper functions*/
+
+int					ft_str_is_empty(char *str);
+void				ft_sort_nums(t_node **stack);
+int					ft_calculate_ratio(int stack_len);
+void				*ft_free_array(char **arr);
+
 #endif

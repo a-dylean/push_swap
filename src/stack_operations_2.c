@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 17:33:01 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/16 18:08:29 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:42:19 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,6 @@ int	ft_stack_is_sorted(t_node *stack)
 		temp = temp->next;
 	}
 	return (1);
-}
-
-int	ft_calculate_ratio(int stack_len)
-{
-	if (stack_len < 10)
-		return (1);
-	else if (stack_len < 100)
-		return ((stack_len - 10) * 0.04 + 1);
-	else if (stack_len < 500)
-		return ((stack_len - 100) * 0.02 + 14);
-	else
-		return ((stack_len - 500) * 0.006 + 30);
 }
 
 int	ft_find_min_num(t_node *stack)

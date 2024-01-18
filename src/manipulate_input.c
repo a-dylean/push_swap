@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:12 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 17:52:23 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:43:24 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,7 @@ int	ft_get_index(t_node *sorted_stack, int num)
 	while (sorted_stack)
 	{
 		if (sorted_stack->num == num)
-		{
 			return (index);
-		}
 		index++;
 		sorted_stack = sorted_stack->next;
 	}
