@@ -6,26 +6,11 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:26:04 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 14:12:54 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:51:59 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	ft_free_stack(t_node **stack)
-{
-	t_node	*head;
-	t_node	*temp;
-
-	head = *stack;
-	while (head)
-	{
-		temp = head;
-		head = head->next;
-		free(temp);
-	}
-	free(stack);
-}
 
 t_node	*ft_get_last_node(t_node *head)
 {
@@ -79,4 +64,19 @@ int	ft_get_steps_to_head(t_node *stack, t_node node)
 		steps++;
 	}
 	return (steps);
+}
+
+void	ft_free_stack(t_node **stack)
+{
+	t_node	*head;
+	t_node	*temp;
+
+	head = *stack;
+	while (head)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
+	free(stack);
 }

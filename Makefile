@@ -1,4 +1,4 @@
-CC = cc -g
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 LIBFT = libft/libft.a

@@ -6,40 +6,11 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:12 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 14:14:12 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:52:23 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	ft_populate_stack(char **argv, t_node **stack_a)
-{
-	char	**temp;
-	int		i;
-
-	argv++;
-	temp = NULL;
-	while (*argv)
-	{
-		if (ft_str_is_empty(*argv) || !ft_chars_check(*argv))
-			ft_exit(stack_a);
-		if (ft_strchr(*argv, ' '))
-		{
-			temp = ft_split(*argv, ' ');
-			i = 0;
-			while (temp[i] && ft_intsize_check(temp[i]))
-				ft_add_node_back(stack_a,
-					ft_create_node(ft_atoi_long(temp[i++]), 0));
-			temp = ft_free_array(temp);
-		}
-		else if (ft_intsize_check(*argv))
-			ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(*argv), 0));
-		else
-			ft_exit(stack_a);
-		argv++;
-	}
-	ft_update_index(stack_a);
-}
 
 t_node	*ft_create_node(int num, int index)
 {
@@ -73,16 +44,57 @@ void	ft_add_node_back(t_node **stack, t_node *new_node)
 	}
 }
 
-// void	ft_create_list(t_node **stack, char **argv)
-// {
-// 	t_node	*next;
-// 	int		i;
+t_node	**ft_sorted_nums(t_node **stack)
+{
+	t_node	*temp;
+	t_node	**sorted_nums;
+	int		i;
 
-// 	i = 0;
-// 	while (argv[i])
-// 	{
-// 		next = ft_create_node(ft_atoi_long(argv[i]), i);
-// 		ft_add_node_back(stack, next);
-// 		i++;
-// 	}
-// }
+	temp = *stack;
+	sorted_nums = (t_node **)malloc(sizeof(t_node));
+	if (!sorted_nums)
+		return (NULL);
+	*sorted_nums = NULL;
+	while (temp)
+	{
+		i = 0;
+		while (temp->index != i)
+			i++;
+		ft_add_node_back(sorted_nums, ft_create_node(temp->num, i));
+		temp = temp->next;
+	}
+	ft_sort_nums(sorted_nums);
+	return (sorted_nums);
+}
+
+int	ft_get_index(t_node *sorted_stack, int num)
+{
+	int	index;
+
+	index = 0;
+	while (sorted_stack)
+	{
+		if (sorted_stack->num == num)
+		{
+			return (index);
+		}
+		index++;
+		sorted_stack = sorted_stack->next;
+	}
+	return (-1);
+}
+
+void	ft_match_nums_with_indexes(t_node **stack_a)
+{
+	t_node	**sorted_stack;
+	t_node	*current;
+
+	sorted_stack = ft_sorted_nums(stack_a);
+	current = *stack_a;
+	while (current)
+	{
+		current->num = ft_get_index(*sorted_stack, current->num);
+		current = current->next;
+	}
+	ft_free_stack(sorted_stack);
+}

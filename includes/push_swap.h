@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 15:12:15 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:49:47 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,18 @@
 # define INTMIN -2147483648
 
 typedef struct t_node
-{ 
+{
 	int				num;
 	int				index;
 	struct t_node	*next;
 }					t_node;
 
-void ft_print_stack(t_node *stack, char stack_name);
+// void				ft_print_stack(t_node *stack, char stack_name);
+void				ft_sort_nums(t_node **stack);
 void				ft_parse_input(int argc, char **argv, t_node **stack_a);
+t_node				**ft_sorted_nums(t_node **stack);
+void				ft_match_nums_with_indexes(t_node **stack_a);
+int					ft_get_index(t_node *sorted_stack, int num);
 void				ft_exit(t_node **stack_a);
 void				*ft_free_array(char **arr);
 int					ft_str_is_empty(char *str);
