@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:34:01 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 15:30:23 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:10:24 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	ft_push(t_node **src, t_node **dest, char stack_name)
 {
 	t_node	*temp;
 
+	if (!src || !dest || !(*src) || !stack_name)
+		return ;
 	temp = (*src);
 	(*src) = (*src)->next;
 	temp->next = (*dest);
@@ -45,7 +47,7 @@ void	ft_rotate(t_node **stack, char stack_name)
 	t_node	*first;
 	t_node	*last;
 
-	if (!*stack || !(*stack)->next)
+	if (!*stack || !(*stack)->next || !stack_name)
 		return ;
 	first = *stack;
 	*stack = (*stack)->next;

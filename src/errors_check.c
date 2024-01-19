@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:21:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 14:10:39 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/19 16:54:03 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ int	ft_chars_check(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '-'
-			&& str[i] != '+')
+		if (!ft_isdigit(str[i]) && str[i] != ' ' && str[i] != '+'
+			&& str[i] != '-')
+			return (0);
+		if ((str[i] == '+' || str[i] == '-') && (!ft_isdigit(str[i + 1])))
 			return (0);
 		i++;
 	}

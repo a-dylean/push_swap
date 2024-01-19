@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:46:24 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:42:37 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/19 14:27:59 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void	ft_sort_nums(t_node **stack)
 	t_node	*temp2;
 	int		num;
 
+	if (!stack || !*stack)
+		return ;
 	temp = *stack;
 	while (temp)
 	{

@@ -6,7 +6,7 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:09:15 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:41:32 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:03:56 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ typedef struct t_node
 /*parsing input and handling errors*/
 
 void				ft_parse_input(int argc, char **argv, t_node **stack_a);
+void				ft_parse_string(char **argv, t_node **stack_a);
 t_node				**ft_sorted_nums(t_node **stack);
 void				ft_match_nums_with_indexes(t_node **stack_a);
 int					ft_get_index(t_node *sorted_stack, int num);
+int					ft_intsize_check(char *str);
 int					ft_chars_check(char *str);
 int					ft_duplicates_check(t_node *stack);
-int					ft_intsize_check(char *str);
 void				ft_exit(t_node **stack_a);
 
 /*stack operations*/

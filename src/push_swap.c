@@ -6,33 +6,45 @@
 /*   By: atonkopi <atonkopi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:04:05 by atonkopi          #+#    #+#             */
-/*   Updated: 2024/01/18 18:27:57 by atonkopi         ###   ########.fr       */
+/*   Updated: 2024/01/19 17:12:26 by atonkopi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_populate_stack(char **argv, t_node **stack_a)
+void	ft_parse_string(char **argv, t_node **stack_a)
 {
 	char	**temp;
 	int		i;
 
+	temp = ft_split(*argv, ' ');
+	i = 0;
+	while (temp[i])
+	{
+		if (ft_intsize_check(temp[i]) && ft_chars_check(temp[i]))
+		{
+			ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(temp[i++]),
+					0));
+		}
+		else
+		{
+			temp = ft_free_array(temp);
+			ft_exit(stack_a);
+		}
+	}
+	temp = ft_free_array(temp);
+}
+
+void	ft_populate_stack(char **argv, t_node **stack_a)
+{
 	argv++;
-	temp = NULL;
 	while (*argv)
 	{
-		if (ft_str_is_empty(*argv) || !ft_chars_check(*argv))
+		if (ft_str_is_empty(*argv))
 			ft_exit(stack_a);
 		if (ft_strchr(*argv, ' '))
-		{
-			temp = ft_split(*argv, ' ');
-			i = 0;
-			while (temp[i] && ft_intsize_check(temp[i]))
-				ft_add_node_back(stack_a,
-					ft_create_node(ft_atoi_long(temp[i++]), 0));
-			temp = ft_free_array(temp);
-		}
-		else if (ft_intsize_check(*argv))
+			ft_parse_string(argv, stack_a);
+		else if (ft_intsize_check(*argv) && ft_chars_check(*argv))
 			ft_add_node_back(stack_a, ft_create_node(ft_atoi_long(*argv), 0));
 		else
 			ft_exit(stack_a);
