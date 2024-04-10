@@ -1,6 +1,7 @@
 **Push swap**
 ---
-This program outputs a program in push_swap instructions that sorts the input integers using a predefined set of instructions using two stacks.
+This project is part of 42 school common core cursus.
+The program outputs a set of instructions that sort the input integers using two stacks. The number of instuctions complies with the limits defined in the subject.
 
 **How to run**
 ---
